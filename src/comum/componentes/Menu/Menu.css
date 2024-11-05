@@ -1,0 +1,131 @@
+/* Resetando algumas propriedades padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais do menu */
+.menu-container {
+  position: relative;
+  background-color: #7986cb; /* Cor de fundo escura, mais profissional */
+  padding: 5px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  z-index: 10;
+}
+
+/* Estilos do botão de alternância do menu */
+.menu-toggle {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #fff; /* Borda branca */
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: #02c9ec; /* Cor de fundo mais clara ao passar o mouse */
+  transform: scale(1.05); /* Animação de aumento do tamanho */
+}
+
+/* Estilos do ícone do menu hamburger */
+.menu-toggle:before {
+  content: '☰'; /* Ícone de menu hamburger */
+  font-size: 22px;
+  transition: transform 0.3s ease;
+  letter-spacing: 10px;
+  
+}
+
+.menu-toggle.open:before {
+  content: '×'; /* Ícone de fechar */
+}
+
+/* Estilos da lista do menu */
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  top: 100%; /* Coloca a lista diretamente abaixo do botão */
+  left: 0;
+  right: 0; 
+  background-color: #ff9100; /* Fundo escuro */
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  z-index: 20;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-list.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(10px); /* Suaviza a transição de abertura */
+}
+
+/* Estilos dos itens do menu */
+.menu-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid #495057;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+  font-size: 16px;
+}
+
+.menu-item a:hover {
+  background-color: #17a2b8; /* Cor azul clara de destaque */
+  padding-left: 15px; /* Deslocamento suave para a esquerda */
+}
+
+/* Estilos para submenus (dropdown) */
+.menu-item.dropdown > a::after {
+  content: ' ▼'; /* Ícone de seta */
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.menu-item.dropdown.open .dropdown-list {
+  display: block;
+  opacity: 1;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #495057;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-list .menu-item a {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.dropdown-list .menu-item a:hover {
+  background-color: #28a745; /* Cor verde para o submenu */
+}
