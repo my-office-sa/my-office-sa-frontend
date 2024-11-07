@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Menu.css';  // Arquivo CSS externo para estilos, se necessário
-import Principal from '../Principal/Principal';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   // Usando o hook useState para controlar o estado do menu
@@ -13,6 +12,7 @@ const Menu = () => {
   };
 
   return (
+
     <div className="menu-container">
       <button className="menu-toggle" onClick={toggleMenu}>
         {isMenuOpen ? 'Fechar Menu' :'Menu'}
@@ -33,7 +33,7 @@ const Menu = () => {
           <a href="#contact">Contato</a>
         </li>
         <li className="menu-item">
-          <a href="#login" >Login</a>
+          <Link to='/login'>Login</Link>
         </li>
       </ul>
     </div>
