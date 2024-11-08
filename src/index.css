@@ -21,18 +21,19 @@ body,
 
 
 :root {
-  --cor-primaria-clara: #7986cb;
-  --cor-primaria: #3f50b5;
-  --cor-primaria-escura: #303f9f;
+  --cor-primaria-clara: #8CC8B2;
+  --cor-primaria: #58AF9B;
+  --cor-primaria-escura: #3E7F6E;
  
-  --cor-secundaria-clara: #ffab40;
-  --cor-secundaria: #ff9100;
-  --cor-secundaria-escura: #ff6d00;
+  --cor-secundaria-clara: #F2F0EC;
+  --cor-secundaria: #ded9d6;
+  --cor-secundaria-escura: #B6B2A8;
  
   --cor-fundo-padrao: #f7f7f7;
  
   --cor-texto-padrao: #1c2025;
   --cor-texto-claro: #fff;
+  --cor-texto-cinza: #7c8e94;
  
   --cor-info: #0288d1;
   --cor-sucesso: #1aa251;

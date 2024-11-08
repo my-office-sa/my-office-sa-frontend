@@ -8,11 +8,8 @@
 /* Estilos gerais do menu */
 .menu-container {
   position: relative;
-  background-color: #7986cb; /* Cor de fundo escura, mais profissional */
-  padding: 5px 20px;
+  padding: 5px 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  z-index: 10;
 }
 
 /* Estilos do botão de alternância do menu */
@@ -28,10 +25,11 @@
   justify-content: center;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  height: 40px;
 }
 
 .menu-toggle:hover {
-  background-color: #02c9ec; /* Cor de fundo mais clara ao passar o mouse */
+  background-color: var(--cor-primaria-clara); /* Cor de fundo mais clara ao passar o mouse */
   transform: scale(1.05); /* Animação de aumento do tamanho */
 }
 
@@ -58,7 +56,7 @@
   top: 100%; /* Coloca a lista diretamente abaixo do botão */
   left: 0;
   right: 0; 
-  background-color: #ff9100; /* Fundo escuro */
+  background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
   z-index: 20;
