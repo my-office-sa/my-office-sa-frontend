@@ -3,7 +3,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import './App.css';
-import Cabecalho from './comum/componentes/Cabecalho/Cabecalho';
 import Rodape from './comum/componentes/Rodape/Rodape';
 
 import PaginaLogin from './paginas/PaginaLogin/PaginaLogin';
@@ -23,7 +22,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <Cabecalho />
+      
       <RouterProvider router={router} />
       <Rodape />
     </>
