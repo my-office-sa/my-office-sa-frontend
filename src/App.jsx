@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Rodape from './comum/componentes/Rodape/Rodape';
+import 'react-toastify/dist/ReactToastify.css';
 
 import PaginaLogin from './paginas/PaginaLogin/PaginaLogin';
 import PaginaInicial from './paginas/PaginaInicial/PaginaInicial';
@@ -11,6 +12,8 @@ import PaginaAbout from './paginas/PaginaAbout/PaginaAbout';
 import PaginaServicos from './paginas/PaginaServicos/PaginaServicos';
 import PaginaContatos from './paginas/PaginaContatos/PaginaContatos';
 import PaginaNovoUsuario from './paginas/PaginaNovoUsuario/PaginaNovoUsuario';
+import PaginaCadastroSala from './paginas/PaginaCadastroSala/PaginaCadastroSala';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +40,10 @@ const router = createBrowserRouter([
     path: 'novo-usuario',
     element: <PaginaNovoUsuario/>,
   },
+  {
+    path: 'cadastro-sala',
+    element: <PaginaCadastroSala/>,
+  },
 ]);
 
 function App() {
@@ -45,6 +52,7 @@ function App() {
       
       <RouterProvider router={router} />
       <Rodape />
+      <ToastContainer />
     </>
   );
 }
