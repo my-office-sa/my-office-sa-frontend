@@ -17,7 +17,7 @@ const PaginaLogin = () => {
             <input type="password" placeholder="Sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
         </div>
        <BotaoCustomizado
-       cor='secundaria'>
+       cor='primaria'>
         Entrar
        </BotaoCustomizado>
     </Principal>

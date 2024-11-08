@@ -56,11 +56,11 @@
   top: 100%; /* Coloca a lista diretamente abaixo do botão */
   left: 0;
   right: 0; 
-  background-color: #fff;
-  border-radius: 4px;
+  background-color: #c6ccca;
+    border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
   z-index: 20;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.8 ease, transform 0.3s ease;
 }
 
 .menu-list.open {
@@ -80,7 +80,7 @@
 }
 
 .menu-item a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   display: block;
   transition: background-color 0.3s ease, padding-left 0.3s ease;
@@ -88,7 +88,7 @@
 }
 
 .menu-item a:hover {
-  background-color: #17a2b8; /* Cor azul clara de destaque */
+  background-color: transparent; /* Cor azul clara de destaque */
   padding-left: 15px; /* Deslocamento suave para a esquerda */
 }
 
