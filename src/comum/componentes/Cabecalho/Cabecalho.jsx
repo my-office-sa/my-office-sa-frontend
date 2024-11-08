@@ -5,7 +5,7 @@ import Menu from "../Menu/Menu"
 function Cabecalho() {
   return (
     <header className="cabecalho_root">
-      <img src="logo.png" height={40} />
+      <img src="/logo.svg" height={40} />
      <Menu></Menu> 
     </header>
   );
