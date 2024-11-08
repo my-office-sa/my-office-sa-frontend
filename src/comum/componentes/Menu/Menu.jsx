@@ -21,16 +21,16 @@ const Menu = () => {
       {/* Lista de itens do menu que será exibida dependendo do estado */}
       <ul className={`menu-list ${isMenuOpen ? 'open' : ''}`}>
         <li className="menu-item">
-          <a href="#home">Home</a>
+        <Link to='/'>Home</Link>
         </li>
         <li className="menu-item">
-          <a href="#about">Sobre</a>
+          <Link to='/about'>Sobre Nós</Link>
         </li>
         <li className="menu-item">
-          <a href="#services">Serviços</a>
+        <Link to='/servicos'>Serviços</Link>
         </li>
         <li className="menu-item">
-          <a href="#contact">Contato</a>
+        <Link to='/contatos'>Contato</Link>
         </li>
         <li className="menu-item">
           <Link to='/login'>Login</Link>

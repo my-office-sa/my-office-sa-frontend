@@ -2,6 +2,7 @@ import { useState } from "react"
 import Principal from "../../comum/componentes/Principal/Principal"
 import "./PaginaLogin.css"
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado"
+import { Link } from "react-router-dom"
 
 const PaginaLogin = () => {
     const [email, setEmail] = useState('')
@@ -20,6 +21,9 @@ const PaginaLogin = () => {
        cor='primaria'>
         Entrar
        </BotaoCustomizado>
+       <span className="">
+        Ainda não tem conta? Cadastre-se <Link to="/novo-usuario">aqui!</Link>
+      </span>
     </Principal>
 }
 
