@@ -28,7 +28,7 @@ const PaginaLogin = () => {
         }
       };
 
-    return <Principal titulo={'Pagina de Login'} voltarPara={'/'}>
+    return <Principal titulo={'Login'} voltarPara={'/'}>
         <div className="campo">
         <label>E-mail</label>
             <input type="email" placeholder="Seu e-mail" value={email} onChange={e => setEmail(e.target.value)}/>

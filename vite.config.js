@@ -14,9 +14,9 @@ export default defineConfig({
        'apple-touch-icon.png',
      ],
      manifest: {
-       name: 'Aulas Frontend com ReactJS + PWA',
-       short_name: 'Aulas Frontend PWA',
-       description: 'É um projeto para...',
+       name: 'My Office',
+       short_name: 'My Office',
+       description: 'É um projeto para aluguel de salas',
        theme_color: '#ffffff',
        background_color: '#ffffff',
        display: 'standalone',

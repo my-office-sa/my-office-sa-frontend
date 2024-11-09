@@ -1,15 +1,20 @@
-import { useNavigate } from 'react-router-dom';
-import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
 import Principal from '../../comum/componentes/Principal/Principal';
 import './PaginaInicial.css';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 const PaginaInicial = () => {
-  const navigate = useNavigate();
 
   return (
-    <Principal titulo="Página Inicial">
-
-
+    <Principal>
+      <div className="input-container">
+        <div className="input-wrapper">
+          <input 
+            type="text"
+            placeholder="Busque sua sala"
+          />
+          <FaMagnifyingGlass className="search-icon" />
+        </div>
+      </div>
     </Principal>
   );
 };

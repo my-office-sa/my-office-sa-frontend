@@ -24,10 +24,7 @@ const Menu = () => {
         <Link to='/'>Home</Link>
         </li>
         <li className="menu-item">
-        <Link to='/novo-usuario'>Cadastro</Link>
-        </li>
-        <li className="menu-item">
-          <Link to='/login'>Login</Link>
+          <Link to='/about'>Sobre Nós</Link>
         </li>
         <li className="menu-item">
         <Link to='/servicos'>Serviços</Link>
@@ -36,7 +33,10 @@ const Menu = () => {
         <Link to='/contatos'>Contato</Link>
         </li>
         <li className="menu-item">
-          <Link to='/about'>Sobre Nós</Link>
+        <Link to='/cadastro-sala'>Cadastre sua Sala</Link>
+        </li>
+        <li className="menu-item">
+          <Link to='/login'>Login</Link>
         </li>
       </ul>
     </div>

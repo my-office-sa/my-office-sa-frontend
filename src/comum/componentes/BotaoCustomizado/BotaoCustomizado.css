@@ -1,7 +1,7 @@
 .botao-customizado_root {
     padding: 16px;
     border: none;
-  
+    border-radius: 20px;
     font-size: 14px;
     opacity: 0.8;
     cursor: pointer;

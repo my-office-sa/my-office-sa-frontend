@@ -86,7 +86,7 @@ const PaginaNovoUsuario = () => {
           onChange={(e) => setConfirmarSenha(e.target.value)}
         />
       </div>
-      <BotaoCustomizado cor="primaria" aoClicar={salvar}>Entrar</BotaoCustomizado>
+      <BotaoCustomizado cor="primaria" aoClicar={salvar}>Cadastrar</BotaoCustomizado>
     </Principal>
   );
 };
