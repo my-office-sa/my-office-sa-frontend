@@ -31,8 +31,8 @@ const PaginaCadastroSala = () => {
   };
 
   const buscarCep = (e) => {
-    const cepDigitado = e.target.value.replace(/\D/g, ""); 
-    setCep(e.target.value); 
+    const cepDigitado = e.target.value.replace(/\D/g, "");
+    setCep(e.target.value);
 
     if (cepDigitado.length === 8) {
       fetch(`https://viacep.com.br/ws/${cepDigitado}/json/`)
@@ -46,10 +46,10 @@ const PaginaCadastroSala = () => {
           setEstado(data.uf || "");
           setCidade(data.localidade || "");
           setBairro(data.bairro || "");
-          setRua(data.logradouro || "")
+          setRua(data.logradouro || "");
 
-          if (setEstado){
-            document.getElementById('campoNumero').focus();
+          if (setEstado) {
+            document.getElementById("campoNumero").focus();
           }
         });
     }
@@ -61,7 +61,7 @@ const PaginaCadastroSala = () => {
         <input
           type="tel"
           placeholder="Informe o cep"
-          onBlur={buscarCep}  
+          onBlur={buscarCep}
           value={cep}
           onChange={(e) =>
             setCep(formatarComMascara(e.target.value, MASCARA_CEP))
