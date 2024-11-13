@@ -1,5 +1,7 @@
 import ServicosUsuario from "./ServicosUsuario";
 
+
+
 const servicosUsuario = new ServicosUsuario()
 
 class ServicoAutenticacao {

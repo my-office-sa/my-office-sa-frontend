@@ -1,24 +1,34 @@
-import React, { useState } from 'react';
-import './Menu.css';  // Arquivo CSS externo para estilos, se necessário
+import React, { useState, useRef, useEffect } from 'react';
+import './Menu.css';
 import { Link } from 'react-router-dom';
 
 const Menu = () => {
-  // Usando o hook useState para controlar o estado do menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
-  // Função para alternar o menu (abrir e fechar)
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-
-    <div className="menu-container">
+    <div className="menu-container" ref={menuRef}>
       <button className="menu-toggle" onClick={toggleMenu}>
-        {isMenuOpen ? 'Fechar Menu' :'Menu'}
+        Menu
       </button>
-
-      {/* Lista de itens do menu que será exibida dependendo do estado */}
+    
       <ul className={`menu-list ${isMenuOpen ? 'open' : ''}`}>
         <li className="menu-item">
         <Link to='/'>Home</Link>
@@ -31,9 +41,6 @@ const Menu = () => {
         </li>
         <li className="menu-item">
         <Link to='/contatos'>Contato</Link>
-        </li>
-        <li className="menu-item">
-        <Link to='/cadastro-sala'>Cadastre sua Sala</Link>
         </li>
         <li className="menu-item">
           <Link to='/login'>Login</Link>

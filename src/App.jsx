@@ -5,7 +5,7 @@ import {
 import './App.css';
 import Rodape from './comum/componentes/Rodape/Rodape';
 import 'react-toastify/dist/ReactToastify.css';
-
+import VerificarAutenticacao from './comum/componentes/VerificarAutenticacao/VerificarAutenticacao';
 import PaginaLogin from './paginas/PaginaLogin/PaginaLogin';
 import PaginaInicial from './paginas/PaginaInicial/PaginaInicial';
 import PaginaAbout from './paginas/PaginaAbout/PaginaAbout';
@@ -41,9 +41,15 @@ const router = createBrowserRouter([
     element: <PaginaNovoUsuario/>,
   },
   {
+    path: '',
+    element: <VerificarAutenticacao />,
+    children: [
+
+  {
     path: 'cadastro-sala',
     element: <PaginaCadastroSala/>,
   },
+]}
 ]);
 
 function App() {
