@@ -22,23 +22,19 @@ const PaginaCadastroSala = () => {
   const [descricaoSala, setDescricaoSala] = useState("");
   const [imagemSala, setImagemSala] = useState("");
 
-  // Função para disparar o click no input de arquivo
   const handleFileClick = () => {
     document.getElementById("imagemSala").click();
   };
 
-  // Função para lidar com o arquivo selecionado
   const handleFileChange = (e) => {
     setImagemSala(e.target.files[0]);
   };
 
-  // Função para buscar o CEP e preencher os campos automaticamente
   const buscarCep = (e) => {
-    const cepDigitado = e.target.value.replace(/\D/g, ""); // Remove qualquer caractere não numérico
-    setCep(e.target.value); // Atualiza o estado do CEP com a entrada do usuário
+    const cepDigitado = e.target.value.replace(/\D/g, ""); 
+    setCep(e.target.value); 
 
     if (cepDigitado.length === 8) {
-      // Verifica se o CEP possui 8 caracteres
       fetch(`https://viacep.com.br/ws/${cepDigitado}/json/`)
         .then((res) => res.json())
         .then((data) => {
@@ -47,11 +43,14 @@ const PaginaCadastroSala = () => {
             return;
           }
 
-          // Preenche os campos com os dados retornados da API
           setEstado(data.uf || "");
           setCidade(data.localidade || "");
           setBairro(data.bairro || "");
-          setRua(data.logradouro || "");
+          setRua(data.logradouro || "")
+
+          if (setEstado){
+            document.getElementById('campoNumero').focus();
+          }
         });
     }
   };
@@ -62,7 +61,7 @@ const PaginaCadastroSala = () => {
         <input
           type="tel"
           placeholder="Informe o cep"
-          onBlur={buscarCep} // Chama a função buscarCep quando o campo perde o foco
+          onBlur={buscarCep}  
           value={cep}
           onChange={(e) =>
             setCep(formatarComMascara(e.target.value, MASCARA_CEP))
@@ -113,6 +112,7 @@ const PaginaCadastroSala = () => {
       <div className="campo">
         <label>Número</label>
         <input
+          id="campoNumero"
           type="number"
           placeholder="N° da casa ou apartamento"
           value={numero}

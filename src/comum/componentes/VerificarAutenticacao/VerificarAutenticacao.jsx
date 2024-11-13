@@ -7,7 +7,7 @@ const instanciaServicoAutenticacao = new ServicoAutenticacao();
 const VerificarAutenticacao = () => {
   const navigate = useNavigate();
 
-  const usuarioEstaLogado = instanciaServicoAutenticacao.buscarUsuarioLogado();
+  const usuarioEstaLogado = instanciaServicoAutenticacao.usuarioEstaLogado();
 
   useEffect(() => {
     if (!usuarioEstaLogado) {
