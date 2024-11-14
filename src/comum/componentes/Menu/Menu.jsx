@@ -7,7 +7,7 @@ const instanciaServicoAutenticacao = new ServicoAutenticacao();
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);  // Usando useState diretamente
+  const [isAuthenticated, setIsAuthenticated] = useState(false);   
   const menuRef = useRef(null);
   const navigate = useNavigate();
 
@@ -29,16 +29,15 @@ const Menu = () => {
   }, []);
 
   useEffect(() => {
-    // Verificando se o usuário está logado
     const usuarioEstaLogado = instanciaServicoAutenticacao.usuarioEstaLogado();
     setIsAuthenticated(usuarioEstaLogado);
-  }, []); // Apenas quando o componente for montado
+  }, []); 
 
   const fazerLogout = (event) => {
-    event.preventDefault();  // Impede o comportamento padrão de link
-    instanciaServicoAutenticacao.logout();  // Chama a função de logout
-    setIsAuthenticated(false);  // Atualiza o estado de autenticação
-    navigate('/');  // Redireciona para a página inicial (ou qualquer outra página desejada)
+    event.preventDefault();   
+    instanciaServicoAutenticacao.logout();   
+    setIsAuthenticated(false);   
+    navigate('/'); 
   };
 
   return (
