@@ -22,9 +22,16 @@ class ServicoAutenticacao {
       if (usuarioLogado) {
         return true;
       }
+
+      
   
       return false;
     }
+
+    logout() {
+      localStorage.removeItem('token');
+    }
   }
+  
   
   export default ServicoAutenticacao;

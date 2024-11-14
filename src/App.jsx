@@ -14,6 +14,8 @@ import PaginaContatos from './paginas/PaginaContatos/PaginaContatos';
 import PaginaNovoUsuario from './paginas/PaginaNovoUsuario/PaginaNovoUsuario';
 import PaginaCadastroSala from './paginas/PaginaCadastroSala/PaginaCadastroSala';
 import { ToastContainer } from 'react-toastify';
+import PaginaMinhasSalas from './paginas/PaginaMinhasSalas/PaginaMinhasSalas';
+import PaginaMeuPerfil from './paginas/PaginaMeuPerfil/PaginaMeuPerfil';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
   {
     path: 'cadastro-sala',
     element: <PaginaCadastroSala/>,
+  },
+  {
+    path: 'minhas-salas',
+    element: <PaginaMinhasSalas/>,
+  },
+  {
+    path: 'meu-perfil',
+    element: <PaginaMeuPerfil/>,
   },
 ]}
 ]);
