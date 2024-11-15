@@ -7,7 +7,7 @@ function Cabecalho() {
   return (
     <header className="cabecalho_root">
       <Link to="/">
-      <img src="/logo.svg" height={40}/>
+      <img src="/logo.svg" height={10}/>
       </Link>
      <Menu></Menu> 
     </header>

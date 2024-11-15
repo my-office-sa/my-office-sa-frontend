@@ -5,7 +5,7 @@ const CardSalas = () => {
 
     return (
         <div className="card_salas">
-            <img src="./public/sala.jpeg" alt="Sala" />
+            <img src="sala.svg" alt="Sala" />
             <div className="bairro_nota">
                 <span>Santa Mônica, Florianópolis</span>
                 <div>
