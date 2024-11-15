@@ -1,0 +1,28 @@
+.card_salas {
+    background-color: transparent;
+    border-radius: 8px;
+    border-color: var(--cor-texto-cinza);
+    border-style: inset;
+    border-width: 1px;
+    height: 250px;
+    width: 250x;
+    padding: 10px;
+}
+
+.bairro_nota {
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;             
+}
+
+.dados_sala {
+    display: flex;
+    flex-direction: column;          
+    margin-top: 10px;                 
+}
+
+img {
+    width: 100%;                     
+    height: auto;                     
+    border-radius: 8px;            
+}
