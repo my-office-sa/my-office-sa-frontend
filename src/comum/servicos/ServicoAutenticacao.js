@@ -29,7 +29,7 @@ class ServicoAutenticacao {
     }
 
     logout() {
-      localStorage.removeItem('token');
+      localStorage.removeItem('usuario-logado');
     }
   }
   

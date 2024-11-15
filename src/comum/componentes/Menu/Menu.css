@@ -1,22 +1,19 @@
-/* Resetando algumas propriedades padrão */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos gerais do menu */
 .menu-container {
   position: relative;
   padding: 5px 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilos do botão de alternância do menu */
 .menu-toggle {
   background-color: transparent;
   color: white;
-  border: 2px solid #fff; /* Borda branca */
+  border: 2px solid #fff; 
   padding: 8px 12px;
   cursor: pointer;
   font-size: 10px;
@@ -29,13 +26,11 @@
 }
 
 .menu-toggle:hover {
-  background-color: var(--cor-primaria-clara); /* Cor de fundo mais clara ao passar o mouse */
-  transform: scale(1.05); /* Animação de aumento do tamanho */
+  background-color: var(--cor-primaria-clara); 
 }
 
-/* Estilos do ícone do menu hamburger */
 .menu-toggle:before {
-  content: '☰'; /* Ícone de menu hamburger */
+  content: '☰'; 
   font-size: 22px;
   transition: transform 0.3s ease;
   letter-spacing: 10px;
@@ -43,22 +38,21 @@
 }
 
 .menu-toggle.open:before {
-  content: '×'; /* Ícone de fechar */
+  content: '×'; 
 }
 
-/* Estilos da lista do menu */
 .menu-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: none;
   position: absolute;
-  top: 100%; /* Coloca a lista diretamente abaixo do botão */
+  top: 100%; 
   left: 0;
   right: 0; 
   background-color: #c6ccca;
     border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   z-index: 20;
   transition: opacity 0.8 ease, transform 0.3s ease;
 }
@@ -66,10 +60,9 @@
 .menu-list.open {
   display: block;
   opacity: 1;
-  transform: translateY(10px); /* Suaviza a transição de abertura */
+  transform: translateY(10px); 
 }
 
-/* Estilos dos itens do menu */
 .menu-item {
   padding: 12px 20px;
   border-bottom: 1px solid #495057;
@@ -88,13 +81,12 @@
 }
 
 .menu-item a:hover {
-  background-color: transparent; /* Cor azul clara de destaque */
-  padding-left: 15px; /* Deslocamento suave para a esquerda */
+  background-color: transparent; 
+  padding-left: 15px; 
 }
 
-/* Estilos para submenus (dropdown) */
 .menu-item.dropdown > a::after {
-  content: ' ▼'; /* Ícone de seta */
+  content: ' ▼'; 
   font-size: 12px;
   margin-left: 5px;
 }
@@ -125,5 +117,5 @@
 }
 
 .dropdown-list .menu-item a:hover {
-  background-color: #28a745; /* Cor verde para o submenu */
+  background-color: #28a745; 
 }

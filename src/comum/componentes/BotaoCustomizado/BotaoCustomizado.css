@@ -2,11 +2,12 @@
     padding: 16px;
     border: none;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     opacity: 0.8;
     cursor: pointer;
     color: var(--cor-texto-claro);
-    font-weight: 400;
+    font-weight: bold;
   }
   
   .botao-customizado_root:hover {

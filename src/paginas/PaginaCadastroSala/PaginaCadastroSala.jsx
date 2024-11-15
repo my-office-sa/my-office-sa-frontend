@@ -7,7 +7,6 @@ import {
   formatarComMascara,
 } from "../../comum/utils/mascaras";
 import { toast } from "react-toastify";
-import React, { useRef } from "react";
 
 const PaginaCadastroSala = () => {
   const [cep, setCep] = useState("");
@@ -113,7 +112,7 @@ const PaginaCadastroSala = () => {
         <label>Número</label>
         <input
           id="campoNumero"
-          type="number"
+          type="text"
           placeholder="N° da casa ou apartamento"
           value={numero}
           onChange={(e) => setNumero(e.target.value)}
@@ -132,7 +131,7 @@ const PaginaCadastroSala = () => {
       <div className="campo">
         <label>Preço</label>
         <input
-          type="number"
+          type="text"
           value={precoSala}
           onChange={(e) =>
             setPrecoSala(formatarComMascara(e.target.value, MASCARA_VALOR))
@@ -159,7 +158,6 @@ const PaginaCadastroSala = () => {
         />
       </div>
 
-      {/* Campo de input de arquivo estilizado */}
       <div className="campo">
         <label>Imagens</label>
         <div className="file-input-container">
@@ -169,11 +167,10 @@ const PaginaCadastroSala = () => {
           <input
             id="imagemSala"
             type="file"
-            style={{ display: "none" }} // Esconde o campo de input original
+            style={{ display: "none" }}
             onChange={handleFileChange}
           />
           {imagemSala && <span>{imagemSala.name}</span>}{" "}
-          {/* Exibe o nome do arquivo selecionado */}
         </div>
       </div>
 
