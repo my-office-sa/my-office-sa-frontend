@@ -6,8 +6,10 @@ import { MASCARA_CELULAR, formatarComMascara } from "../../comum/utils/mascaras"
 import ServicosUsuario from "../../comum/servicos/ServicosUsuario";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import ServicoAutenticacao from "../../comum/servicos/ServicoAutenticacao";
 
 const servicoUsuario = new ServicosUsuario();
+const servicoAutenticacao = new ServicoAutenticacao(); 
 
 const PaginaNovoUsuario = () => {
   const [nome, setNome] = useState("");
@@ -30,6 +32,12 @@ const PaginaNovoUsuario = () => {
       celular,
       senha,
     };
+    
+    if(servicoAutenticacao.verificarEmail(email) ){
+      toast.error("E-mail já foi cadastrado!")
+      return
+    }
+
     if (senha === confirmarSenha) {
       servicoUsuario.cadastrarUsuario(cliente);
     } else {
