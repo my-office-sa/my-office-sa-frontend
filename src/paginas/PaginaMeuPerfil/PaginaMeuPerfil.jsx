@@ -8,8 +8,8 @@ const instanciaServicoAutenticacao = new ServicoAutenticacao();
 
 const PaginaMeuPerfil = () => {
   const navigate = useNavigate();
-  const usuarioLogado = instanciaServicoAutenticacao.usuarioEstaLogado();
-  const [usuarioAutenticado, setUsuarioAutenticado] = useState("");
+  const usuarioLogado = instanciaServicoAutenticacao.buscarUsuarioLogado();
+
 
   const fazerLogout = (event) => {
     event.preventDefault();

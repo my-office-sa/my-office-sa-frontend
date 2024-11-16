@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     children: [
 
   {
-    path: 'cadastro-sala',
+    path: 'cadastro-sala/:id?',
     element: <PaginaCadastroSala/>,
   },
   {

@@ -45,6 +45,16 @@ class ServicoAutenticacao {
     return ""; // Caso não tenha um usuário logado, retorna uma string vazia
   }
 
+
+  buscarUsuarioLogado() {
+    const usuarioLogado = localStorage.getItem('usuario-logado');
+    if (usuarioLogado) {
+      return JSON.parse(usuarioLogado);
+    }
+
+    return undefined;
+  }
+
 }
 
 export default ServicoAutenticacao;

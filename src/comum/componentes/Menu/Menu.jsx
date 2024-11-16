@@ -77,7 +77,7 @@ const Menu = () => {
           </li>
           <li className="menu-item">
             <Link to="/" onClick={fazerLogout}>
-              Logout
+              Sair
             </Link>
           </li>
         </ul>
