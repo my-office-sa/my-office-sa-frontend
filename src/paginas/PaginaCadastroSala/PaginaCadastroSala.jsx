@@ -8,12 +8,13 @@ import {
 } from "../../comum/utils/mascaras";
 import { toast } from "react-toastify";
 import ServicosSalas from "../../comum/servicos/ServicosSalas";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const instanciaServicoSalas = new ServicosSalas();
 
 const PaginaCadastroSala = () => {
   const params = useParams();
+  const navigate = useNavigate('');
 
   const [cep, setCep] = useState("");
   const [estado, setEstado] = useState("");
@@ -25,7 +26,7 @@ const PaginaCadastroSala = () => {
   const [precoSala, setPrecoSala] = useState("");
   const [capacidadeSala, setCapacidadeSala] = useState("");
   const [descricaoSala, setDescricaoSala] = useState("");
-  const [imagemSala, setImagemSala] = useState("");
+  const [imagemSala, setImagemSala] = useState(""); // Agora, armazenando Base64 aqui
 
   useEffect(() => {
     if (params.id) {
@@ -41,19 +42,30 @@ const PaginaCadastroSala = () => {
         setPrecoSala(SalaEncontrada.precoSala);
         setCapacidadeSala(SalaEncontrada.capacidadeSala);
         setDescricaoSala(SalaEncontrada.descricaoSala);
-        setImagemSala(SalaEncontrada.imagemSala);
+        setImagemSala(SalaEncontrada.imagemSala); // Já deve vir como Base64
       }
     }
   }, [params.id]);
 
+  // Função para abrir o seletor de arquivos
   const handleFileClick = () => {
     document.getElementById("imagemSala").click();
   };
 
+  // Função para carregar o arquivo de imagem e convertê-lo para Base64
   const handleFileChange = (e) => {
-    setImagemSala(e.target.files[0]);
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        // Aqui, a imagem é convertida para Base64 e armazenada no estado
+        setImagemSala(reader.result);
+      };
+      reader.readAsDataURL(file); // Converte a imagem para Base64
+    }
   };
 
+  // Função para buscar o CEP e preencher os dados da sala
   const buscarCep = (e) => {
     const cepDigitado = e.target.value.replace(/\D/g, "");
     setCep(e.target.value);
@@ -79,6 +91,7 @@ const PaginaCadastroSala = () => {
     }
   };
 
+  // Função para salvar a sala
   const salvar = () => {
     if (
       !cep ||
@@ -91,7 +104,7 @@ const PaginaCadastroSala = () => {
       !precoSala ||
       !capacidadeSala ||
       !descricaoSala ||
-      !imagemSala
+      !imagemSala // Verifica se a imagem foi carregada
     ) {
       toast.error("Preencha todos os campos!");
       return;
@@ -109,22 +122,25 @@ const PaginaCadastroSala = () => {
       precoSala,
       capacidadeSala,
       descricaoSala,
-      imagemSala,
+      imagemSala, // A imagem Base64 vai aqui
     };
 
     if (params.id) {
       instanciaServicoSalas.editarSala(sala);
-      toast.success("Tudo Pronto! Dados Atualizados.")
+      toast.success("Tudo Pronto! Dados Atualizados.");
     } else {
       instanciaServicoSalas.cadastrarSala(sala);
       toast.success("Tudo Pronto! Sala Cadastrada!");
     }
 
+    navigate('/minhas-salas')
+    
+    
   };
 
   return (
     <Principal
-      titulo={params.id ? "Editar Sala" : "Cadastar Sala"}
+      titulo={params.id ? "Editar Sala" : "Cadastrar Sala"}
       voltarPara={"/minhas-salas"}
     >
       {params.id && (
@@ -192,7 +208,7 @@ const PaginaCadastroSala = () => {
         <input
           id="campoNumero"
           type="text"
-          placeholder=" Informe o N° da casa, apartamento ..."
+          placeholder="Informe o N° da casa, apartamento ..."
           value={numero}
           onChange={(e) => setNumero(e.target.value)}
         />
@@ -210,7 +226,7 @@ const PaginaCadastroSala = () => {
       <div className="campo">
         <label>Preço</label>
         <input
-        placeholder="Informe o valor da diária"
+          placeholder="Informe o valor da diária"
           type="text"
           value={precoSala}
           onChange={(e) =>
@@ -222,7 +238,7 @@ const PaginaCadastroSala = () => {
       <div className="campo">
         <label>Capacidade</label>
         <input
-        placeholder="Informe a quantidade de pessoas"
+          placeholder="Informe a quantidade de pessoas"
           type="number"
           value={capacidadeSala}
           onChange={(e) => setCapacidadeSala(e.target.value)}
@@ -251,12 +267,12 @@ const PaginaCadastroSala = () => {
             style={{ display: "none" }}
             onChange={handleFileChange}
           />
-          {imagemSala && <span>{imagemSala.name}</span>}{" "}
+          {imagemSala && <span>{imagemSala.name}</span>}
         </div>
       </div>
 
       <BotaoCustomizado cor="primaria" aoClicar={salvar}>
-        {params.id ? "Atualizar" : "Cadastar"}
+        {params.id ? "Atualizar" : "Cadastrar"}
       </BotaoCustomizado>
     </Principal>
   );
