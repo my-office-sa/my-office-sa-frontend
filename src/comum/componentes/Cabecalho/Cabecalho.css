@@ -6,3 +6,9 @@
     align-items: center;
     padding: 0 16px;
   }
+
+  .logo {
+    height: 40px; /* Ajuste o tamanho da imagem conforme necessário */
+    width: auto; /* Mantém a proporção original da imagem */
+    display: block; /* Evita espaçamento indesejado abaixo da imagem */
+  }

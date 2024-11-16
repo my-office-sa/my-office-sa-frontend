@@ -25,7 +25,7 @@ const PaginaNovoUsuario = () => {
       toast.error('Preencha todos os campos obrigatórios!');
       return;
     }
-    const cliente = {
+    const usuario = {
       id: Date.now(),
       nome,
       email,
@@ -39,7 +39,7 @@ const PaginaNovoUsuario = () => {
     }
 
     if (senha === confirmarSenha) {
-      servicoUsuario.cadastrarUsuario(cliente);
+      servicoUsuario.cadastrarUsuario(usuario);
     } else {
       toast.error('Senhas são diferentes!')
       return

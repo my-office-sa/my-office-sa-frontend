@@ -35,6 +35,16 @@ class ServicoAutenticacao {
     const usuariosDoLocalStorage = servicosUsuario.listar();
     return usuariosDoLocalStorage.some((usuario) => usuario.email === email);
   }
+
+  obterNomeUsuario() {
+    const usuarioLogado = localStorage.getItem("usuario-logado");
+    if (usuarioLogado) {
+      const usuario = JSON.parse(usuarioLogado); // Converte de volta o objeto de usuário
+      return usuario.nome || ""; // Retorna o nome do usuário, caso exista
+    }
+    return ""; // Caso não tenha um usuário logado, retorna uma string vazia
+  }
+
 }
 
 export default ServicoAutenticacao;
