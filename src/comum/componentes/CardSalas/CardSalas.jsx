@@ -1,23 +1,20 @@
-import { FaRegStar } from "react-icons/fa6";
-import './CardSalas.css';
+import React from 'react';
+import './CardSalas.css'; 
 
-const CardSalas = () => {
+const CardSalas = ({ sala }) => {
+  return (
+    <div className="card-sala">
+      <div className="imagem-sala">
+        {sala.imagemSala && <img src={sala.imagemSala} alt={sala.nome} />}
+      </div>
+      <div className="info-sala">
+        <p><strong>{sala.bairro}, {sala.cidade}</strong></p>
+        <p><strong>Capacidade: </strong>{sala.capacidadeSala} pessoas</p>
+        <p><strong>Valor: </strong>R${sala.precoSala}</p>
+      </div>
 
-    return (
-        <div className="card_salas">
-            <img src="sala.svg" alt="Sala" />
-            <div className="bairro_nota">
-                <span>Santa Mônica, Florianópolis</span>
-                <div>
-                    <FaRegStar /> 4.9
-                </div>
-            </div>
-            <div className="dados_sala">
-                <span>Capacidade: 250</span>
-                <span>Valor: R$250</span>
-            </div>
-        </div>
-    );
-}
+    </div>
+  );
+};
 
 export default CardSalas;

@@ -42,9 +42,9 @@ const PaginaLogin = () => {
        aoClicar={entrar}>
         Entrar
        </BotaoCustomizado>
-       <span className="">
-        Ainda não tem conta? Cadastre-se <Link to="/novo-usuario">aqui!</Link>
-      </span>
+       <div className="link_cadastro_login">
+       <p> Ainda não tem conta? Cadastre-se  </p><Link to="/novo-usuario"><strong>  aqui!</strong></Link>
+      </div>
     </Principal>
 }
 
