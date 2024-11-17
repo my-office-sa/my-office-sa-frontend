@@ -11,6 +11,7 @@ const PaginaInicial = () => {
   const [listaSalas, setListaSalas] = useState([]);
   const [salasFiltradas, setSalasFiltradas] = useState([]);
   const [pesquisa, setPesquisa] = useState('');
+  const [buscaRealizada, setBuscaRealizada] = useState(false);
 
   useEffect(() => {
     const salasDoLocalStorage = instanciaServicoSalas.listar();
@@ -21,6 +22,7 @@ const PaginaInicial = () => {
   const filtrarSalas = (e) => {
     const termoPesquisa = e.target.value.toLowerCase();
     setPesquisa(termoPesquisa);
+    setBuscaRealizada(true);
 
     if (termoPesquisa === '') {
       setSalasFiltradas(listaSalas);
@@ -53,7 +55,7 @@ const PaginaInicial = () => {
       </div>
 
       <div>
-        {salasFiltradas.length === 0 ? (
+        {buscaRealizada && salasFiltradas.length === 0 ? (
           <p>Não há salas disponíveis para o filtro informado.</p>
         ) : (
           salasFiltradas.map((sala) => (
