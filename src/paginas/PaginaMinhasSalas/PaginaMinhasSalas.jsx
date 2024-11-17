@@ -5,7 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import PaginaCadastroSala from "../PaginaCadastroSala/PaginaCadastroSala";
+import './PaginaMinhasSalas.css';
 
 const instanciaServicoSalas = new ServicosSalas();
 
@@ -14,7 +14,6 @@ const PaginaMinhasSalas = () => {
   const [listaSalas, setListaSalas] = useState([]);
 
   useEffect(() => {
-    // Supondo que `instanciaServicoSalas.listar()` retorna uma lista de salas
     const salasDoLocalStorage = instanciaServicoSalas.listar();
     setListaSalas(salasDoLocalStorage);
   }, []);
@@ -32,47 +31,54 @@ const PaginaMinhasSalas = () => {
   };
 
   return (
-    <Principal voltarPara="/" titulo="Salas Cadastradas">
-      <Link to="/cadastro-sala" style={{textAlign:"center"}} ><strong>Cadastre aqui!</strong></Link>
-
-      {listaSalas.map((sala) => {
-            return (
-                <div key={sala.id} className="pagina-lista-clientes__item-cliente">
-                  {/* Contêiner para imagem e nome da sala */}
-                  <div className="item-cliente-info">
-                    {/* Exibindo a imagem da sala */}
-                    {sala.imagemSala && (
-                      <img
-                        src={sala.imagemSala}
-                        alt={sala.nome}
-                        className="item-cliente-imagem"
-                      />
-                    )}
-              
-                    {/* Exibindo o nome da sala */}
-                    <div className="item-cliente-nome">{sala.nome}</div>
-                  </div>
-              
-                  {/* Contêiner para as ações (editar, excluir) */}
-                <div className="pagina-lista-clientes__item-cliente-acoes">
-                  <label>Editar: </label>
-                    <FaEdit
-                      size={18}
-                      className="icone-editar"
-                      onClick={() => navegarParaEdicao(sala.id)}
-                    />
-                    <label>Excluir: </label>
-                    <FaTrash
-                      size={18}
-                      className="icone-excluir"
-                      color="red"
-                      onClick={() => excluirSala(sala.id)}
-                    />
-                  </div>
-                </div>
-              );
-              
-      })}
+    <Principal voltarPara="/" titulo="Minhas Salas Cadastradas">
+      {listaSalas.length === 0 ? (
+        <div style={{ textAlign: "center" }}>
+          <p>Você ainda não possui nenhuma sala cadastrada.</p>
+          <Link to="/cadastro-sala" cursor="pointer">
+            <strong>Cadastre aqui!</strong>
+          </Link>
+        </div>
+      ) : (
+        listaSalas.map((sala) => (
+          <div key={sala.id} className="minhas_salas">
+            <div>
+              {sala.imagemSala && (
+                <img
+                  className="item-cliente-imagem"
+                  src={sala.imagemSala}
+                  alt={sala.nome}
+                />
+              )}
+            </div>
+            <div className="dados_minhas_salas">
+              <ul>
+                <li>
+                  <strong>ID Sala: </strong>
+                  {sala.id}
+                </li>
+                <li>
+                  <FaEdit
+                    size={18}
+                    onClick={() => navegarParaEdicao(sala.id)}
+                    cursor="pointer"
+                  />
+                  Editar
+                </li>
+                <li>
+                  <FaTrash
+                    size={18}
+                    color="grey"
+                    onClick={() => excluirSala(sala.id)}
+                    cursor="pointer"
+                  />
+                  Excluir
+                </li>
+              </ul>
+            </div>
+          </div>
+        ))
+      )}
     </Principal>
   );
 };

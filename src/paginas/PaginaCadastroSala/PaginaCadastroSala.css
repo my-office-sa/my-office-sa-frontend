@@ -1,14 +1,12 @@
-/* Container para o botão de arquivo */
 .file-input-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-/* Estilo do botão de escolha de arquivo */
 .file-input-btn {
-    background-color: #58af9b; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto */
+    background-color: #58af9b; 
+    color: #fff;
     border: none;
     padding: 12px 20px;
     font-size: 16px;
@@ -17,12 +15,10 @@
     transition: background-color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse sobre o botão */
 .file-input-btn:hover {
     background-color: #007b7f;
 }
 
-/* Estilo para o nome do arquivo exibido */
 .file-input-container span {
     font-size: 14px;
     color: #333;

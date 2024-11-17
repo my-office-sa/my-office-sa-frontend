@@ -26,7 +26,7 @@ const PaginaCadastroSala = () => {
   const [precoSala, setPrecoSala] = useState("");
   const [capacidadeSala, setCapacidadeSala] = useState("");
   const [descricaoSala, setDescricaoSala] = useState("");
-  const [imagemSala, setImagemSala] = useState(""); // Agora, armazenando Base64 aqui
+  const [imagemSala, setImagemSala] = useState(""); 
 
   useEffect(() => {
     if (params.id) {
@@ -42,31 +42,30 @@ const PaginaCadastroSala = () => {
         setPrecoSala(SalaEncontrada.precoSala);
         setCapacidadeSala(SalaEncontrada.capacidadeSala);
         setDescricaoSala(SalaEncontrada.descricaoSala);
-        setImagemSala(SalaEncontrada.imagemSala); // Já deve vir como Base64
+        setImagemSala(SalaEncontrada.imagemSala);  
       }
     }
   }, [params.id]);
 
-  // Função para abrir o seletor de arquivos
-  const handleFileClick = () => {
+   const handleFileClick = () => {
     document.getElementById("imagemSala").click();
   };
 
-  // Função para carregar o arquivo de imagem e convertê-lo para Base64
-  const handleFileChange = (e) => {
+   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        // Aqui, a imagem é convertida para Base64 e armazenada no estado
-        setImagemSala(reader.result);
+         setImagemSala({
+          nome: file.name,
+          content: reader.result,
+      });
       };
-      reader.readAsDataURL(file); // Converte a imagem para Base64
+      reader.readAsDataURL(file); 
     }
   };
 
-  // Função para buscar o CEP e preencher os dados da sala
-  const buscarCep = (e) => {
+   const buscarCep = (e) => {
     const cepDigitado = e.target.value.replace(/\D/g, "");
     setCep(e.target.value);
 
@@ -91,8 +90,7 @@ const PaginaCadastroSala = () => {
     }
   };
 
-  // Função para salvar a sala
-  const salvar = () => {
+   const salvar = () => {
     if (
       !cep ||
       !estado ||
@@ -104,7 +102,7 @@ const PaginaCadastroSala = () => {
       !precoSala ||
       !capacidadeSala ||
       !descricaoSala ||
-      !imagemSala // Verifica se a imagem foi carregada
+      !imagemSala  
     ) {
       toast.error("Preencha todos os campos!");
       return;
@@ -122,7 +120,7 @@ const PaginaCadastroSala = () => {
       precoSala,
       capacidadeSala,
       descricaoSala,
-      imagemSala, // A imagem Base64 vai aqui
+      imagemSala,  
     };
 
     if (params.id) {
@@ -254,7 +252,6 @@ const PaginaCadastroSala = () => {
           onChange={(e) => setDescricaoSala(e.target.value)}
         />
       </div>
-
       <div className="campo">
         <label>Imagens</label>
         <div className="file-input-container">
@@ -267,7 +264,7 @@ const PaginaCadastroSala = () => {
             style={{ display: "none" }}
             onChange={handleFileChange}
           />
-          {imagemSala && <span>{imagemSala.name}</span>}
+          {imagemSala && <span>{imagemSala.nome}</span>}
         </div>
       </div>
 

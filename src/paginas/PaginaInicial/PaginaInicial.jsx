@@ -17,7 +17,7 @@ const PaginaInicial = () => {
         </div>
       </div>
       <div>
-        <CardSalas></CardSalas>
+        
       </div>
     </Principal>
   );

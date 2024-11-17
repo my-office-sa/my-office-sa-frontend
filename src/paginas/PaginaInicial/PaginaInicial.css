@@ -1,69 +1,65 @@
-/* Estilo do Cabeçalho */
 header {
-    background-color: #f4f4f4;  /* Altere para a cor do seu cabeçalho */
-    padding: 10px 20px;  /* Adiciona algum padding no cabeçalho */
+    background-color: #f4f4f4;  
+    padding: 10px 20px;  
     text-align: center;
   }
   
-  /* O contêiner principal que irá envolver o input */
   .input-container {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    padding-top: 20px; /* Distância do topo (abaixo do cabeçalho) */
+    justify-content: center;  
+    padding-top: 20px;  
   }
   
-  /* O contêiner do input */
+ 
   .input-wrapper {
     position: relative;
-    width: 80%;  /* A largura é 80% da tela em dispositivos menores */
-    max-width: 300px;  /* Define a largura máxima para não esticar muito */
+    width: 80%;  
+    max-width: 300px;   
   }
   
   .input-wrapper input {
-    width: 100%;  /* O input ocupa toda a largura disponível */
-    padding: 10px 40px 10px 10px; /* Padding para o ícone */
-    font-size: 16px;  /* Tamanho da fonte */
+    width: 100%;   
+    padding: 10px 40px 10px 10px; 
+    font-size: 16px;   
     border: 1px solid #ccc;
     border-radius: 20px;
   }
   
   .search-icon {
     position: absolute;
-    left: 270px; /* Alinha o ícone à esquerda */
+    left: 270px; 
     top: 50%;
-    transform: translateY(-50%);  /* Centraliza o ícone verticalmente */
+    transform: translateY(-50%); 
     font-size: 18px;
     color: #666;
-    pointer-events: none; /* O ícone não bloqueia o clique ou digitação */
+    pointer-events: none; 
   }
   
-  /* Responsividade para telas menores (mobile) */
   @media (max-width: 600px) {
     .input-wrapper {
-      width: 90%;  /* Aumenta a largura do input em telas menores */
+      width: 90%;  
     }
   
     .input-wrapper input {
-      font-size: 14px;  /* Diminui o tamanho da fonte para telas menores */
+      font-size: 14px;
     }
   
     .search-icon {
-      font-size: 16px;  /* Diminui o tamanho do ícone para telas menores */
+      font-size: 16px;  
     }
   }
   
-  /* Responsividade para telas maiores (desktop) */
   @media (min-width: 1024px) {
     .input-wrapper {
-      width: 40%;  /* O campo de entrada ocupa 40% da largura na tela de desktop */
+      width: 40%; 
     }
   
     .input-wrapper input {
-      font-size: 18px;  /* Aumenta o tamanho da fonte para telas grandes */
+      font-size: 18px; 
     }
   
     .search-icon {
-      font-size: 20px;  /* Aumenta o tamanho do ícone para telas grandes */
+      font-size: 20px;  
     }
   }
   

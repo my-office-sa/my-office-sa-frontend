@@ -1,52 +1,21 @@
-.pagina-lista-clientes__item-cliente {
-    display: flex;
-    justify-content: space-between; /* Alinha os itens à esquerda e direita */
-    align-items: center; /* Alinha verticalmente os itens */
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .item-cliente-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .item-cliente-imagem {
-    width: 60px; /* Define o tamanho da imagem */
-    height: 60px;
-    object-fit: cover; /* A imagem preenche o espaço sem distorção */
-    border-radius: 50%; /* Torna a imagem redonda */
-    margin-right: 16px; /* Espaçamento entre a imagem e o nome da sala */
-  }
-  
-  .item-cliente-nome {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .pagina-lista-clientes__item-cliente-acoes {
-    display: flex;
-    gap: 10px; /* Espaçamento entre os ícones */
-    align-items: center;
-    
-  }
-  
-  .icone-editar, .icone-excluir {
-    cursor: pointer;
-    transition: color 0.3s ease;
+.minhas_salas{
+  display: flex;
+  justify-content:stretch;
+  flex-direction: column;
+}
 
-  }
+.dados_minhas_salas{
+  text-align: center;
+  line-height: 1.4em;
   
-  .icone-editar:hover {
-    color: #007bff; /* Cor ao passar o mouse sobre o ícone de edição */
-  }
+}
+.item-cliente-imagem{
+  width:300px;
+  height:200px;
+  margin-right: 10px;
+  margin-left: 10px;
   
-  .icone-excluir:hover {
-    color: #dc3545; /* Cor ao passar o mouse sobre o ícone de exclusão */
-  }
-  
+}
+
+li { list-style-type: none; }
+
