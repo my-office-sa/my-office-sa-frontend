@@ -26,7 +26,8 @@ const PaginaCadastroSala = () => {
   const [precoSala, setPrecoSala] = useState("");
   const [capacidadeSala, setCapacidadeSala] = useState("");
   const [descricaoSala, setDescricaoSala] = useState("");
-  const [imagemSala, setImagemSala] = useState(""); 
+  const [nomeArquivo, setNomeArquivo] = useState("");
+  const [imagemSala, setImagemSala] = useState("");
 
   useEffect(() => {
     if (params.id) {
@@ -47,25 +48,23 @@ const PaginaCadastroSala = () => {
     }
   }, [params.id]);
 
-   const handleFileClick = () => {
+  const handleFileClick = () => {
     document.getElementById("imagemSala").click();
   };
 
-   const handleFileChange = (e) => {
+  const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setNomeArquivo(file.name);
       const reader = new FileReader();
       reader.onloadend = () => {
-         setImagemSala({
-          nome: file.name,
-          content: reader.result,
-      });
+        setImagemSala(reader.result);
       };
-      reader.readAsDataURL(file); 
+      reader.readAsDataURL(file);
     }
   };
 
-   const buscarCep = (e) => {
+  const buscarCep = (e) => {
     const cepDigitado = e.target.value.replace(/\D/g, "");
     setCep(e.target.value);
 
@@ -90,7 +89,7 @@ const PaginaCadastroSala = () => {
     }
   };
 
-   const salvar = () => {
+  const salvar = () => {
     if (
       !cep ||
       !estado ||
@@ -120,7 +119,7 @@ const PaginaCadastroSala = () => {
       precoSala,
       capacidadeSala,
       descricaoSala,
-      imagemSala,  
+      imagemSala,
     };
 
     if (params.id) {
@@ -131,9 +130,7 @@ const PaginaCadastroSala = () => {
       toast.success("Tudo Pronto! Sala Cadastrada!");
     }
 
-    navigate('/minhas-salas')
-    
-    
+    navigate('/minhas-salas');
   };
 
   return (
@@ -252,6 +249,7 @@ const PaginaCadastroSala = () => {
           onChange={(e) => setDescricaoSala(e.target.value)}
         />
       </div>
+
       <div className="campo">
         <label>Imagens</label>
         <div className="file-input-container">
@@ -264,7 +262,7 @@ const PaginaCadastroSala = () => {
             style={{ display: "none" }}
             onChange={handleFileChange}
           />
-          {imagemSala && <span>{imagemSala.nome}</span>}
+          {nomeArquivo && <span>{nomeArquivo}</span>}
         </div>
       </div>
 

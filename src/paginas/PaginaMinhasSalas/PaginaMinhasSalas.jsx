@@ -53,27 +53,18 @@ const PaginaMinhasSalas = () => {
             </div>
             <div className="dados_minhas_salas">
               <ul>
-                <li>
-                  <strong>ID Sala: </strong>
-                  {sala.id}
-                </li>
-                <li>
-                  <FaEdit
+                <li><strong>ID Sala:</strong>{sala.id}</li>
+                <li><FaEdit
                     size={18}
                     onClick={() => navegarParaEdicao(sala.id)}
                     cursor="pointer"
-                  />
-                  Editar
-                </li>
-                <li>
-                  <FaTrash
+                  />Editar</li>
+                <li> <FaTrash
                     size={18}
                     color="grey"
                     onClick={() => excluirSala(sala.id)}
                     cursor="pointer"
-                  />
-                  Excluir
-                </li>
+                  /> Excluir</li>
               </ul>
             </div>
           </div>
