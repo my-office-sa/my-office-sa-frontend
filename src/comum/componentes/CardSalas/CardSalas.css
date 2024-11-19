@@ -1,0 +1,29 @@
+.card-sala {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-sala .imagem-sala img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .card-sala .info-sala {
+    margin-top: 10px;
+  }
+  
+  .card-sala .acoes-sala {
+    margin-top: 10px;
+  }
+  
+  .card-sala .acoes-sala button {
+    margin-right: 10px;
+  }
+  

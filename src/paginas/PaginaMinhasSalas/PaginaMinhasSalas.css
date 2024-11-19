@@ -1,0 +1,35 @@
+.minhas_salas {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dados_minhas_salas {
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.item-cliente-imagem {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+.link_cadastro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--cor-texto-cinza);
+  line-height: 1.4em;
+}
+
+p {
+  color: black;
+}

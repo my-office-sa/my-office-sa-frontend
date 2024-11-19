@@ -1,0 +1,65 @@
+header {
+    background-color: #f4f4f4;  
+    padding: 10px 20px;  
+    text-align: center;
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: center;  
+    padding-top: 20px;  
+  }
+  
+ 
+  .input-wrapper {
+    position: relative;
+    width: 80%;  
+    max-width: 300px;   
+  }
+  
+  .input-wrapper input {
+    width: 100%;   
+    padding: 10px 40px 10px 10px; 
+    font-size: 16px;   
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 270px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 18px;
+    color: #666;
+    pointer-events: none; 
+  }
+  
+  @media (max-width: 600px) {
+    .input-wrapper {
+      width: 90%;  
+    }
+  
+    .input-wrapper input {
+      font-size: 14px;
+    }
+  
+    .search-icon {
+      font-size: 16px;  
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .input-wrapper {
+      width: 40%; 
+    }
+  
+    .input-wrapper input {
+      font-size: 18px; 
+    }
+  
+    .search-icon {
+      font-size: 20px;  
+    }
+  }
+  

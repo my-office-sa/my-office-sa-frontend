@@ -1,0 +1,26 @@
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-input-btn {
+    background-color: #58af9b; 
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-input-btn:hover {
+    background-color: #007b7f;
+}
+
+.file-input-container span {
+    font-size: 14px;
+    color: #333;
+    margin-top: 4px;
+}
