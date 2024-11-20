@@ -9,18 +9,20 @@ import {
 import { toast } from "react-toastify";
 import ServicosSalas from "../../comum/servicos/ServicosSalas";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 const instanciaServicoSalas = new ServicosSalas();
 
 const PaginaCadastroSala = () => {
   const params = useParams();
-  const navigate = useNavigate('');
+  const navigate = useNavigate("");
 
   const [cep, setCep] = useState("");
   const [estado, setEstado] = useState("");
   const [cidade, setCidade] = useState("");
   const [bairro, setBairro] = useState("");
   const [rua, setRua] = useState("");
+
   const [numero, setNumero] = useState("");
   const [data, setData] = useState("");
   const [precoSala, setPrecoSala] = useState("");
@@ -28,6 +30,9 @@ const PaginaCadastroSala = () => {
   const [descricaoSala, setDescricaoSala] = useState("");
   const [nomeArquivo, setNomeArquivo] = useState("");
   const [imagemSala, setImagemSala] = useState("");
+
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
   useEffect(() => {
     if (params.id) {
@@ -43,7 +48,7 @@ const PaginaCadastroSala = () => {
         setPrecoSala(SalaEncontrada.precoSala);
         setCapacidadeSala(SalaEncontrada.capacidadeSala);
         setDescricaoSala(SalaEncontrada.descricaoSala);
-        setImagemSala(SalaEncontrada.imagemSala);  
+        setImagemSala(SalaEncontrada.imagemSala);
       }
     }
   }, [params.id]);
@@ -64,28 +69,27 @@ const PaginaCadastroSala = () => {
     }
   };
 
-  const buscarCep = (e) => {
-    const cepDigitado = e.target.value.replace(/\D/g, "");
-    setCep(e.target.value);
+  const buscarCep = async (event) => {
+    try {
+      const resp = await axios.get(
+        `https://brasilapi.com.br/api/cep/v2/${event.target.value}`
+      );
 
-    if (cepDigitado.length === 8) {
-      fetch(`https://viacep.com.br/ws/${cepDigitado}/json/`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.erro) {
-            toast.error("CEP não encontrado!");
-            return;
-          }
+      console.log(resp.data);
 
-          setEstado(data.uf || "");
-          setCidade(data.localidade || "");
-          setBairro(data.bairro || "");
-          setRua(data.logradouro || "");
+      setRua(resp.data.street || "");
+      setBairro(resp.data.neighborhood || "");
+      setCidade(resp.data.city || "");
+      setEstado(resp.data.state || "");
 
-          if (setEstado) {
-            document.getElementById("campoNumero").focus();
-          }
-        });
+      setLatitude(resp.data.location?.coordinates?.latitude || "");
+      setLongitude(resp.data.location?.coordinates?.longitude || "");
+
+      if (resp.data.street) {
+        document.getElementById("campoNumero").focus();
+      }
+    } catch (error) {
+      toast.error("CEP não encontrado ou erro na consulta.");
     }
   };
 
@@ -101,7 +105,7 @@ const PaginaCadastroSala = () => {
       !precoSala ||
       !capacidadeSala ||
       !descricaoSala ||
-      !imagemSala  
+      !imagemSala
     ) {
       toast.error("Preencha todos os campos!");
       return;
@@ -120,6 +124,7 @@ const PaginaCadastroSala = () => {
       capacidadeSala,
       descricaoSala,
       imagemSala,
+      localizacao: { latitude, longitude },
     };
 
     if (params.id) {
@@ -130,7 +135,7 @@ const PaginaCadastroSala = () => {
       toast.success("Tudo Pronto! Sala Cadastrada!");
     }
 
-    navigate('/minhas-salas');
+    navigate("/minhas-salas");
   };
 
   return (

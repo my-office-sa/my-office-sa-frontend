@@ -16,11 +16,16 @@ import PaginaCadastroSala from './paginas/PaginaCadastroSala/PaginaCadastroSala'
 import { ToastContainer } from 'react-toastify';
 import PaginaMinhasSalas from './paginas/PaginaMinhasSalas/PaginaMinhasSalas';
 import PaginaMeuPerfil from './paginas/PaginaMeuPerfil/PaginaMeuPerfil';
+import PaginaGoogleMaps from './paginas/PaginaGoogleMaps/PaginaGoogleMaps';
 
 const router = createBrowserRouter([
   {
     path: '',
     element: <PaginaInicial />,
+  },
+  {
+    path: 'maps/:lat?/:long?',
+    element: <PaginaGoogleMaps />,
   },
   {
     path: 'login',
