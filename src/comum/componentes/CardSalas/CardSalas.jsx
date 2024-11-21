@@ -38,10 +38,14 @@ const CardSalas = ({ sala }) => {
         <p>
           <strong>Valor: </strong>R${sala.precoSala}
         </p>
-        <br />
+        <p>
+         </p><br/>
         <BotaoCustomizado cor="primaria" aoClicar={chamarMaps}>
           Ver Localização
-        </BotaoCustomizado>
+        </BotaoCustomizado> <br/>
+        <strong>Entrar em contado </strong>  
+        <a target="_blank" 
+			   href="https://wa.me" ><img src="/whatsapp.png" class="img_wtsapp" /></a><br/>
       </div>
     </div>
   );
