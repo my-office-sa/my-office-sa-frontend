@@ -16,7 +16,7 @@ export default defineConfig({
      manifest: {
        name: 'My Office',
        short_name: 'My Office',
-       description: 'É um projeto para aluguel de salas',
+       description: 'Projeto de aluguel de salas',
        theme_color: '#ffffff',
        background_color: '#ffffff',
        display: 'standalone',
