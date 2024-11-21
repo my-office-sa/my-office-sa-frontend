@@ -6,6 +6,7 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6em;
   }
   
   .card-sala .imagem-sala img {
@@ -27,8 +28,24 @@
     margin-right: 10px;
   }
   
+.btn_card {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
   .img_wtsapp{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
+    
+  }
+
+  .contato_wtsapp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    line-height: 1em;
   }
