@@ -43,7 +43,7 @@ const CardSalas = ({ sala }) => {
         <BotaoCustomizado cor="primaria" aoClicar={chamarMaps}>
           Ver Localização
         </BotaoCustomizado> <br/>
-        <strong>Entrar em contado </strong>  
+        <strong>Entrar em contato </strong>  
         <a target="_blank" 
 			   href="https://wa.me" ><img src="/whatsapp.png" class="img_wtsapp" /></a><br/>
       </div>
