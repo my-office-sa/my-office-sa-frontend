@@ -1,4 +1,3 @@
-import Avatar from "../Avatar/Avatar";
 import "./Cabecalho.css";
 import Menu from "../Menu/Menu"
 import { Link } from "react-router-dom";

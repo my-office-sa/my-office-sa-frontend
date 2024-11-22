@@ -17,4 +17,3 @@ export const formatarComMascara = (value, mask) => {
 
   export const MASCARA_CELULAR = '(##) #####-####';
   export const MASCARA_CEP = '#####-###';
-  export const MASCARA_VALOR = '###,##'

@@ -30,9 +30,13 @@ const PaginaMinhasSalas = () => {
     }
   };
 
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuario-logado')) 
+
+  const minhasSalas = listaSalas.filter((sala) => sala.usuarioId == usuarioLogado.id)
+
   return (
     <Principal voltarPara="/" titulo="Minhas Salas Cadastradas">
-      {listaSalas.length === 0 ? (
+      {minhasSalas.length === 0 ? (
         <div className="link_cadastro">
           <p>Você ainda não possui nenhuma sala cadastrada.</p>
           <Link to="/cadastro-sala">
@@ -40,7 +44,7 @@ const PaginaMinhasSalas = () => {
           </Link>
         </div>
       ) : (
-        listaSalas.map((sala) => (
+        minhasSalas.map((sala) => (
           <div key={sala.id} className="minhas_salas">
             <div>
               {sala.imagemSala && (

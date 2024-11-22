@@ -3,7 +3,6 @@ import Principal from "../../comum/componentes/Principal/Principal";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
 import {
   MASCARA_CEP,
-  MASCARA_VALOR,
   formatarComMascara,
 } from "../../comum/utils/mascaras";
 import { toast } from "react-toastify";
@@ -32,6 +31,7 @@ const PaginaCadastroSala = () => {
 
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const usuarioLogado = JSON.parse(localStorage.getItem('usuario-logado'))
 
   useEffect(() => {
     if (params.id) {
@@ -108,6 +108,7 @@ const PaginaCadastroSala = () => {
       return;
     }
 
+
     const sala = {
       id: params.id ? +params.id : Date.now(),
       cep,
@@ -121,8 +122,9 @@ const PaginaCadastroSala = () => {
       descricaoSala,
       imagemSala,
       localizacao: { latitude, longitude },
+      usuarioId: +usuarioLogado.id,      
     };
-
+   
     if (params.id) {
       instanciaServicoSalas.editarSala(sala);
       toast.success("Tudo Pronto! Dados Atualizados.");
@@ -217,7 +219,7 @@ const PaginaCadastroSala = () => {
           type="text"
           value={precoSala}
           onChange={(e) =>
-            setPrecoSala(formatarComMascara(e.target.value, MASCARA_VALOR))
+            setPrecoSala(e.target.value)
           }
         />
       </div>

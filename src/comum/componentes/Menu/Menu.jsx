@@ -83,6 +83,9 @@ const Menu = () => {
           <li className="menu-item">
             <Link to="/login">Login</Link>
           </li>
+          <li className="menu-item">
+            <Link to="/novo-usuario">Cadastro</Link>
+          </li>
         </ul>
       )}
     </div>

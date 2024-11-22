@@ -30,7 +30,6 @@ class ServicoAutenticacao {
     localStorage.removeItem("usuario-logado");
   }
 
-  // Nova função para verificar se o email já está cadastrado
   verificarEmail(email) {
     const usuariosDoLocalStorage = servicosUsuario.listar();
     return usuariosDoLocalStorage.some((usuario) => usuario.email === email);
@@ -39,10 +38,10 @@ class ServicoAutenticacao {
   obterNomeUsuario() {
     const usuarioLogado = localStorage.getItem("usuario-logado");
     if (usuarioLogado) {
-      const usuario = JSON.parse(usuarioLogado); // Converte de volta o objeto de usuário
-      return usuario.nome || ""; // Retorna o nome do usuário, caso exista
+      const usuario = JSON.parse(usuarioLogado); 
+      return usuario.nome || ""; 
     }
-    return ""; // Caso não tenha um usuário logado, retorna uma string vazia
+    return ""; 
   }
 
 

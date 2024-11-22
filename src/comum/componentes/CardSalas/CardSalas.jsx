@@ -42,7 +42,7 @@ const CardSalas = ({ sala }) => {
           <BotaoCustomizado cor="primaria" aoClicar={chamarMaps}>
             Localização
           </BotaoCustomizado>
-          <BotaoCustomizado cor="primaria">Informações</BotaoCustomizado>
+          <BotaoCustomizado cor="primaria" aoClicar={() => navigate(`/detalhes-sala/${sala.id}`)} >Informações</BotaoCustomizado>
         </div>
       </div>
     </div>

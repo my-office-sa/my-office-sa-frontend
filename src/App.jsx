@@ -17,6 +17,7 @@ import { ToastContainer } from 'react-toastify';
 import PaginaMinhasSalas from './paginas/PaginaMinhasSalas/PaginaMinhasSalas';
 import PaginaMeuPerfil from './paginas/PaginaMeuPerfil/PaginaMeuPerfil';
 import PaginaGoogleMaps from './paginas/PaginaGoogleMaps/PaginaGoogleMaps';
+import PaginaDetalhesSala from './paginas/PaginaDetalhesSala/PaginaDetalhesSala';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: 'novo-usuario',
     element: <PaginaNovoUsuario/>,
+  },
+  {
+    path: 'detalhes-sala/:salaid',
+    element: <PaginaDetalhesSala/>,
   },
   {
     path: '',
