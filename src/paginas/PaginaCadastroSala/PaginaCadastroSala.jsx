@@ -24,7 +24,6 @@ const PaginaCadastroSala = () => {
   const [rua, setRua] = useState("");
 
   const [numero, setNumero] = useState("");
-  const [data, setData] = useState("");
   const [precoSala, setPrecoSala] = useState("");
   const [capacidadeSala, setCapacidadeSala] = useState("");
   const [descricaoSala, setDescricaoSala] = useState("");
@@ -44,7 +43,6 @@ const PaginaCadastroSala = () => {
         setBairro(SalaEncontrada.bairro);
         setRua(SalaEncontrada.rua);
         setNumero(SalaEncontrada.numero);
-        setData(SalaEncontrada.data);
         setPrecoSala(SalaEncontrada.precoSala);
         setCapacidadeSala(SalaEncontrada.capacidadeSala);
         setDescricaoSala(SalaEncontrada.descricaoSala);
@@ -101,7 +99,6 @@ const PaginaCadastroSala = () => {
       !bairro ||
       !rua ||
       !numero ||
-      !data ||
       !precoSala ||
       !capacidadeSala ||
       !descricaoSala ||
@@ -119,7 +116,6 @@ const PaginaCadastroSala = () => {
       bairro,
       rua,
       numero,
-      data,
       precoSala,
       capacidadeSala,
       descricaoSala,
@@ -211,15 +207,6 @@ const PaginaCadastroSala = () => {
           placeholder="Informe o N° da casa, apartamento ..."
           value={numero}
           onChange={(e) => setNumero(e.target.value)}
-        />
-      </div>
-
-      <div className="campo">
-        <label>Data</label>
-        <input
-          type="date"
-          value={data}
-          onChange={(e) => setData(e.target.value)}
         />
       </div>
 

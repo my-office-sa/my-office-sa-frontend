@@ -3,16 +3,14 @@ import "./Menu.css";
 import { Link, useNavigate } from "react-router-dom";
 import ServicoAutenticacao from "../../servicos/ServicoAutenticacao";
 import Avatar from "../Avatar/Avatar";
-import ServicosUsuario from "../../servicos/ServicosUsuario";
 
 const instanciaServicoAutenticacao = new ServicoAutenticacao();
-
 
 const Menu = () => {
   const [menuAberto, setMenuAberto] = useState(false);
   const [usuarioAutenticado, setUsuarioAutenticado] = useState(false);
   const menuRef = useRef(null);
-  const avatarRef = useRef(null); // Ref para o avatar
+  const avatarRef = useRef(null);
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -20,7 +18,6 @@ const Menu = () => {
   };
 
   const foraDoMenu = (event) => {
-    // Fecha o menu se clicar fora do avatar ou do menu
     if (
       menuRef.current &&
       !menuRef.current.contains(event.target) &&
@@ -52,10 +49,9 @@ const Menu = () => {
 
   return (
     <div className="menu-container" ref={menuRef}>
-      {/* Se o usuário estiver logado, mostra o Avatar, senão, mostra o Menu */}
       {usuarioAutenticado ? (
         <div ref={avatarRef} onClick={toggleMenu}>
-          <Avatar nome = {instanciaServicoAutenticacao.obterNomeUsuario()} />
+          <Avatar nome={instanciaServicoAutenticacao.obterNomeUsuario()} />
         </div>
       ) : (
         <button className="menu-toggle" onClick={toggleMenu}>
@@ -63,14 +59,13 @@ const Menu = () => {
         </button>
       )}
 
-      {/* Menu de navegação */}
       {usuarioAutenticado && menuAberto && (
         <ul className="menu-list open">
           <li className="menu-item">
             <Link to="/meu-perfil">Meu Perfil</Link>
           </li>
           <li className="menu-item">
-            <Link to="/minhas-salas">Minhas Salas Cadastradas</Link>
+            <Link to="/minhas-salas">Salas Cadastradas</Link>
           </li>
           <li className="menu-item">
             <Link to="/cadastro-sala">Cadastrar Sala</Link>
@@ -83,7 +78,6 @@ const Menu = () => {
         </ul>
       )}
 
-      {/* Menu de login */}
       {!usuarioAutenticado && (
         <ul className={`menu-list ${menuAberto ? "open" : ""}`}>
           <li className="menu-item">

@@ -40,14 +40,9 @@ const CardSalas = ({ sala }) => {
         </p>
         <div className="btn_card">
           <BotaoCustomizado cor="primaria" aoClicar={chamarMaps}>
-            Ver Localização
+            Localização
           </BotaoCustomizado>
-          <div className="contato_wtsapp">
-            <a target="_blank" href="https://wa.me">
-              <img src="/whatsapp.png" class="img_wtsapp" />
-            </a>
-            Contato
-          </div>
+          <BotaoCustomizado cor="primaria">Informações</BotaoCustomizado>
         </div>
       </div>
     </div>
