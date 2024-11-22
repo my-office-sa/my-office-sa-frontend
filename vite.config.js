@@ -22,12 +22,12 @@ export default defineConfig({
        display: 'standalone',
        icons: [
          {
-           src: 'icons/logo_fundo_verde.vsg',
+           src: 'icons/icon-192x192.png',
            sizes: '192x192',
            type: 'image/png',
          },
          {
-           src: 'icons/logo_fundo_verde.vsg',
+           src: 'icons/icon-512x512.png',
            sizes: '512x512',
            type: 'image/png',
          },
