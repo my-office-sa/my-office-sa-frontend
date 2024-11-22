@@ -40,7 +40,7 @@ const CardSalas = ({ sala }) => {
         </p>
         <div className="btn_card">
           <BotaoCustomizado cor="primaria" aoClicar={chamarMaps}>
-            Localização
+            Localização teste
           </BotaoCustomizado>
           <BotaoCustomizado cor="primaria">Informações</BotaoCustomizado>
         </div>
