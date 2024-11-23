@@ -1,16 +1,8 @@
-import './Rodape.css';
+import FooterResponsivo from '../FooterResponsivo/FooterResponsivo';
 
 function Rodape() {
-  const anoAtual = new Date().getFullYear();
 
-  return (
-    <footer className="rodape_root">
-      <h6>
-        Copyright © {anoAtual} - Todos os direitos
-        reservados.
-      </h6>
-    </footer>
-  );
+  return <FooterResponsivo/>
 }
 
 export default Rodape;
