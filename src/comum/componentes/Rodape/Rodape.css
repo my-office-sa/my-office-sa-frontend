@@ -1,0 +1,61 @@
+<<<<<<< HEAD
+=======
+.rodape_root {
+  height: auto;
+  padding: 16px;
+  background-color: var(--cor-primaria-clara);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.rodape_informacoes {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--cor-primaria-escura);
+  max-width: 400px; /* Limita a largura do texto */
+  line-height: 1.5; /* Melhora a legibilidade */
+}
+
+.rodape_links {
+  margin-top: 8px;
+  display: flex;
+  gap: 16px;
+}
+
+.rodape_links a {
+  color: var(--cor-primaria-escura);
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 14px;
+}
+
+.rodape_links a:hover {
+  text-decoration: underline;
+}
+
+.rodape_redes_sociais {
+  margin-top: 8px;
+  display: flex;
+  gap: 16px;
+}
+
+.rodape_redes_sociais a {
+  color: var(--cor-primaria-escura);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.rodape_redes_sociais a:hover {
+  text-decoration: underline;
+}
+
+.rodape_endereco {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--cor-primaria-escura);
+}
+>>>>>>> 3fd415475b67f9c053c4f247784c7ac7c39e0bf0

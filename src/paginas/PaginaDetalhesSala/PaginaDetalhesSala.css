@@ -1,0 +1,20 @@
+.detalhes-sala{
+    display: flex;
+    flex-direction: column;
+     padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6em;
+    gap: 20px;
+}
+
+.imagem-detalhe-sala{
+     
+     border-radius: 20px;
+     width: 300px;
+     height: 200px;
+     margin: 0 auto;
+     display: block;
+}
