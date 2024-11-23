@@ -5,7 +5,7 @@ const PaginaTermosDeUso = () => {
 
   return (
     <Principal titulo="Termo de Uso" voltarPara="/">
-      <div className="termo_de_uso">
+    <div className="termo-uso">
         <h4>1. Introdução</h4>
         <p>
           Este Termo de Uso ("Termo") estabelece as condições gerais para o uso da plataforma My Office ("Plataforma"), um serviço online que conecta usuários a espaços para realização de reuniões. Ao acessar e utilizar a Plataforma, o usuário ("Usuário") concorda expressamente com todos os termos e condições aqui estabelecidos.

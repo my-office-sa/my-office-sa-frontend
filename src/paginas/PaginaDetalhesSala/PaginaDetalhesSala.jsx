@@ -28,7 +28,7 @@ const PaginaDetalhesSala = () => {
         <div className="detalhes-sala">
           <div className="detalhes-imagem">
             {sala.imagemSala && (
-              <img src={sala.imagemSala} alt={sala.nome} className="imagem-sala" />
+              <img src={sala.imagemSala} alt={sala.nome} className="imagem-detalhe-sala" />
             )}
           </div>
           <div className="detalhes-info">
@@ -39,7 +39,7 @@ const PaginaDetalhesSala = () => {
             <p><strong>Preço:</strong> R${sala.precoSala}</p>
             <p><strong>Cidade:</strong> {sala.cidade}</p>
             <p><strong>Bairro:</strong> {sala.bairro}</p>
-            <p><strong>Contato</strong></p>
+            <p><strong>Contato  </strong></p>
           </div>
         </div>
       ) : (
