@@ -1,9 +1,52 @@
-import Principal from '../../comum/componentes/Principal/Principal';
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import Principal from "../../comum/componentes/Principal/Principal";
+import ServicosSalas from "../../comum/servicos/ServicosSalas";
 import './PaginaDetalhesSala.css';
 
+const instanciaServicoSalas = new ServicosSalas();
+
 const PaginaDetalhesSala = () => {
-    return <Principal></Principal>
+  const { idSala } = useParams();  
+  const [sala, setSala] = useState(null); 
+  const navigate = useNavigate();  
 
-}
+  useEffect(() => {
+    const salasDoLocalStorage = instanciaServicoSalas.listar();  
+    const salaEncontrada = salasDoLocalStorage.find((sala) => sala.id === Number(idSala));
 
-export default PaginaDetalhesSala
+    if (salaEncontrada) {
+      setSala(salaEncontrada);  
+    } else {
+      navigate("/");  
+    }
+  }, [idSala, navigate]);
+
+  return (
+    <Principal titulo="Detalhes da Sala" voltarPara="/">
+      {sala ? (
+        <div className="detalhes-sala">
+          <div className="detalhes-imagem">
+            {sala.imagemSala && (
+              <img src={sala.imagemSala} alt={sala.nome} className="imagem-sala" />
+            )}
+          </div>
+          <div className="detalhes-info">
+            <h2>{sala.nome}</h2>
+            <p><strong>ID:</strong> {sala.id}</p>
+            <p><strong>Descrição:</strong> {sala.descricaoSala}</p>
+            <p><strong>Capacidade:</strong> {sala.capacidadeSala} pessoas</p>
+            <p><strong>Preço:</strong> R${sala.precoSala}</p>
+            <p><strong>Cidade:</strong> {sala.cidade}</p>
+            <p><strong>Bairro:</strong> {sala.bairro}</p>
+            <p><strong>Contato</strong></p>
+          </div>
+        </div>
+      ) : (
+        <p>Carregando detalhes...</p>
+      )}
+    </Principal>
+  );
+};
+
+export default PaginaDetalhesSala;
