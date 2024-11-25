@@ -1,0 +1,160 @@
+/* Estilos Gerais */
+.contatos_page {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contatos_page p {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+  
+  .contatos_page h1 {
+    font-size: 32px;
+    color: #3e7f6e;
+    text-align: center;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  
+  .contatos_page h4 {
+    font-size: 22px;
+    color: #3e7f6e;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .contatos_page ul {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  
+  .contatos_page ul li {
+    margin-bottom: 1rem;
+  }
+  
+  .contatos_page a {
+    color: #3e7f6e;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .contatos_page a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Formulário de Contato */
+  .form-contato {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+  
+  .form-contato label {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-contato input,
+  .form-contato textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-contato button {
+    background-color: #3e7f6e;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-contato button:hover {
+    background-color: #2f6b4e;
+  }
+  
+  /* Redes Sociais */
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-links li {
+    list-style: none;
+  }
+  
+  .social-links a {
+    font-size: 18px;
+    color: #3e7f6e;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 850px) {
+    .contatos_page {
+      padding: 1.5rem;
+      font-size: 15px;
+    }
+  
+    .contatos_page h4 {
+      font-size: 18px;
+    }
+  
+    .contatos_page p {
+      font-size: 15px;
+    }
+  
+    .form-contato input,
+    .form-contato textarea {
+      font-size: 15px;
+    }
+  
+    .form-contato button {
+      font-size: 15px;
+    }
+  
+    h1 {
+      font-size: 26px;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .contatos_page {
+      padding: 1rem;
+      font-size: 14px;
+    }
+  
+    .contatos_page h4 {
+      font-size: 16px;
+    }
+  
+    .contatos_page p {
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  

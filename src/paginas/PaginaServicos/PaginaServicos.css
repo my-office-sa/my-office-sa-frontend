@@ -1,0 +1,122 @@
+
+.servicos_page {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .servicos_page p {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+  
+  .servicos_page h4 {
+    font-size: 22px;
+    color: #3e7f6e;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .servicos_page ul {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  
+  .servicos_page ul li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .servicos_page strong {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .servicos_page br {
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #3e7f6e;
+    text-align: center;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  
+  .servicos_page a {
+    color: var(--cor-hover);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .servicos_page a:hover {
+    color: var(--cor-hover);
+    text-decoration: underline;
+  }
+  
+  .servicos_page section {
+    margin-bottom: 2rem;
+  }
+  
+  .servicos_page section h4 {
+    font-size: 22px;
+    color: #3e7f6e;
+    margin-top: 1.5rem;
+  }
+  
+  .servicos_page section p {
+    font-size: 16px;
+    margin-top: 0.5rem;
+    color: #555;
+  }
+  
+
+  @media (max-width: 850px) {
+    .servicos_page {
+      padding: 1.5rem;
+      font-size: 15px;
+    }
+  
+    .servicos_page h4 {
+      font-size: 18px;
+    }
+  
+    .servicos_page p {
+      font-size: 15px;
+    }
+  
+    h1 {
+      font-size: 26px;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .servicos_page {
+      padding: 1rem;
+      font-size: 14px;
+    }
+  
+    .servicos_page h4 {
+      font-size: 16px;
+    }
+  
+    .servicos_page p {
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  

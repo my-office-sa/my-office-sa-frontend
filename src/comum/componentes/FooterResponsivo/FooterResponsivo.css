@@ -6,6 +6,7 @@
   --cor-texto-secundario: rgb(207, 207, 210);
   --cor-hover: #ff6f61;
   --sombra-footer: rgba(0, 0, 0, 0.3);
+  --cor-link-hover: #00bcd4; /* Cor para hover nos links */
 }
 
 /* Padding geral para a seção */
@@ -16,7 +17,7 @@
   display: flex;
   justify-content: center;  /* Centraliza horizontalmente */
   align-items: center;      /* Centraliza verticalmente */
-  min-height: 10vh;        /* Garante que a seção ocupe toda a altura da tela */
+  min-height: 10vh;         /* Garante que a seção ocupe toda a altura da tela */
 }
 
 /* Estilos gerais do footer */

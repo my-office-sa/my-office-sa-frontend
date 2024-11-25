@@ -22,6 +22,7 @@
   import PaginaPoliticaDePrivacidade from './paginas/PaginaPoliticaDePrivacidade/PaginaPoliticaDePrivacidade';
   import PaginaTermoDeUso from './paginas/PaginaTermosDeUso/PaginaTermosDeUso';
   import PaginaTermosDeUso from './paginas/PaginaTermosDeUso/PaginaTermosDeUso';
+import PaginaSeguranca from './paginas/PaginaSecurity/PaginaSecurity';
 
   const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@
     {
       path: 'contatos',
       element: <PaginaContatos/>,
+    },
+    {
+      path: 'security',
+      element: <PaginaSeguranca/>,
     },
     {
       path: 'novo-usuario',

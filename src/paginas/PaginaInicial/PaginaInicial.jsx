@@ -4,6 +4,7 @@ import Principal from '../../comum/componentes/Principal/Principal';
 import CardSalas from '../../comum/componentes/CardSalas/CardSalas';
 import ServicosSalas from '../../comum/servicos/ServicosSalas';
 import './PaginaInicial.css';
+import FooterResponsivo from '../../comum/componentes/FooterResponsivo/FooterResponsivo';
 
 const instanciaServicoSalas = new ServicosSalas();
 
@@ -63,6 +64,7 @@ const PaginaInicial = () => {
           ))
         )}
       </div>
+      <FooterResponsivo/>
     </Principal>
   );
 };

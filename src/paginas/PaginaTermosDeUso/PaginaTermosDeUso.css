@@ -1,4 +1,124 @@
-.termo-uso{
-    line-height: 1.7em;
-    text-align: justify;
+:root {
+  --cor-fundo-principal: #f7f7f7;
+  --cor-secundaria: #2a2a2a;
+  --cor-acao: #4a90e2;
+  --cor-titulo: #2c3e50;
+  --cor-texto: #7f8c8d;
+  --cor-destaque: #e74c3c;
+  --cor-fundo: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+.pagina__termo-uso {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background-color: var(--cor-fundo);
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  box-shadow: 0px 2px 10px var(--sombra);
+  border-radius: 8px;
+}
+
+.pagina__termo-uso h1 {
+  font-size: 2.4rem;
+  color: var(--cor-titulo);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.pagina__termo-uso h4 {
+  font-size: 1.5rem;
+  color: var(--cor-titulo);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.pagina__termo-uso p {
+  font-size: 1.1rem;
+  color: var(--cor-texto);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.pagina__termo-uso strong {
+  font-weight: bold;
+  color: var(--cor-acao);
+}
+
+.pagina__termo-uso .ultima-atualizacao {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--cor-destaque);
+  font-weight: 500;
+}
+
+.pagina__termo-uso br {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 850px) {
+  .pagina__termo-uso {
+    padding: 2rem;
+  }
+
+  .pagina__termo-uso h1 {
+    font-size: 2rem;
+  }
+
+  .pagina__termo-uso h4 {
+    font-size: 1.3rem;
+  }
+
+  .pagina__termo-uso p {
+    font-size: 1rem;
+  }
+
+  .pagina__termo-uso .ultima-atualizacao {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .pagina__termo-uso {
+    padding: 1.5rem;
+  }
+
+  .pagina__termo-uso h1 {
+    font-size: 1.8rem;
+  }
+
+  .pagina__termo-uso h4 {
+    font-size: 1.2rem;
+  }
+
+  .pagina__termo-uso p {
+    font-size: 0.95rem;
+  }
+
+  .pagina__termo-uso .ultima-atualizacao {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .pagina__termo-uso h1 {
+    font-size: 1.6rem;
+  }
+
+  .pagina__termo-uso h4 {
+    font-size: 1rem;
+  }
+
+  .pagina__termo-uso p {
+    font-size: 0.9rem;
+  }
+
+  .pagina__termo-uso .ultima-atualizacao {
+    font-size: 0.9rem;
+  }
 }

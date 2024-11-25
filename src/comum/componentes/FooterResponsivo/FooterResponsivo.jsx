@@ -20,35 +20,34 @@ const FooterResponsivo = () => {
           <div className="sb__footer-links_div">
             <h4>Redes Sociais</h4>
             <div className="socialmedia">
-              <p>
-                <img src="/whatsapp.png"  alt="" />
-              </p>
-              <p>
-                <img src="instagran.png"  alt="" />
-              </p>
-              <p>
-                <img src="linkedin.png" alt="" />
-              </p>
-              <p>
-                <img  alt="" />
-              </p>
+              <a href="https://wa.me" target="_blank" rel="noopener noreferrer">
+                <img src="/whatsapp.png" alt="WhatsApp" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="/instagran.png" alt="Instagram" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="/linkedin.png" alt="LinkedIn" />
+              </a>
             </div>
           </div>
         </div>
 
-        <hr></hr>
+        <hr />
 
         <div className="sb__footer-below">
           <div className="sb__footer-below-links">
-            <a><div><p>Terms & Conditions</p></div></a>
-            <a><div><p>Privacy</p></div></a>
-            <a><div><p>Security</p></div></a>
-            <a><div><p>Cookie Declaration</p></div></a>
+            <a href="/termo-uso">
+              <p>Termos e Condições</p>
+            </a>
+            <a href="/politica-privacidade">
+              <p>Políticas e Privacidade</p>
+            </a>
+            <a href="/security">
+              <p>Políticas de segurança</p>
+            </a>
           </div>
         </div>
-          <div className="sb__footer-copyrigth">
-            <p>@{new Date().getFullYear()} MyOffice. All rigth reserved.</p>
-          </div>
       </div>
     </div>
   );
