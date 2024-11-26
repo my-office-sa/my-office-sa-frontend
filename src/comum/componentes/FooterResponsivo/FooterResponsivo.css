@@ -1,246 +1,137 @@
-/* Variáveis de cor para facilitar ajustes futuros */
-:root {
-  --cor-fundo-secao: #3E7F6E;
-  --cor-fundo-footer: #58AF9B;
-  --cor-texto-claro: #fff;
-  --cor-texto-secundario: rgb(207, 207, 210);
-  --cor-hover: #ff6f61;
-  --sombra-footer: rgba(0, 0, 0, 0.3);
-  --cor-link-hover: #00bcd4; /* Cor para hover nos links */
-}
-
-/* Padding geral para a seção */
-.section__padding {
-  padding: 4rem 2rem;
-  background-color: var(--cor-fundo-secao); /* Fundo escuro mais sutil */
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;  /* Centraliza horizontalmente */
-  align-items: center;      /* Centraliza verticalmente */
-  min-height: 10vh;         /* Garante que a seção ocupe toda a altura da tela */
-}
-
-/* Estilos gerais do footer */
 .footer {
-  background-color: var(--cor-fundo-footer);
-  color: var(--cor-texto-claro);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px var(--sombra-footer); /* Sombra mais forte */
-  position: relative;
-  z-index: 1;
-  width: 100%;               /* Garante que o footer ocupe toda a largura */
-  max-width: 1200px;         /* Limita a largura máxima */
-  margin: 0 auto;            /* Centraliza horizontalmente */
-  text-align: center;        /* Centraliza o texto */
+  background-color: #8CC8B2;
+  color: #fff;
+  padding: 5px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 5px rgba(126, 196, 133, 0.1);
+  border-radius: 5px;
 }
 
-/* Contêiner principal do footer */
-.sb__footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;       /* Centraliza os itens */
-  padding: 2rem 0;
-  max-width: 100%;
-  z-index: 2;
-}
-
-/* Links principais do footer */
-.sb__footer-links {
-  display: flex;
-  justify-content: center;   /* Centraliza horizontalmente os links */
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  text-align: center;        /* Centraliza o texto dentro dos links */
-  margin-bottom: 1rem;
-}
-
-/* Cada bloco de links dentro do footer */
-.sb__footer-links_div {
-  width: 200px;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  color: var(--cor-texto-claro);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
-  text-align: center;        /* Centraliza o texto dentro dos blocos */
-}
-
-/* Efeito ao passar o mouse sobre o bloco */
-.sb__footer-links_div:hover {
-  transform: translateY(-5px); /* Levanta o bloco */
-  opacity: 0.8; /* Diminui a opacidade para dar foco */
-}
-
-/* Estilo dos links */
-a {
-  color: var(--cor-texto-secundario);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  transition: color 0.3s ease, transform 0.3s ease;
-  padding: 0.3rem 0;
-  display: block;
-  text-align: center;        /* Centraliza os links */
-}
-
-/* Alteração da cor dos links ao passar o mouse */
-a:hover {
-  color: var(--cor-hover);
-  transform: translateX(5px); /* Efeito de movimento */
-}
-
-/* Ícones das redes sociais */
-.socialmedia {
-  display: flex;
-  justify-content: center;   /* Centraliza os ícones */
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.socialmedia img {
-  max-width: 45px;
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Efeito de hover para as imagens das redes sociais */
-.socialmedia img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
-}
-
-/* Estilo dos títulos dentro de cada div de links */
-.sb__footer-links_div h4 {
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: var(--cor-texto-claro);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;        /* Centraliza os títulos */
-}
-
-/* Estilo para os parágrafos dentro de cada div de links */
-.sb__footer-links_div p {
-  font-size: 14px;
-  line-height: 18px;
-  margin: 0.5rem 0;
-  cursor: pointer;
-  color: var(--cor-texto-secundario);
-  transition: color 0.3s ease;
-  text-align: center;        /* Centraliza os parágrafos */
-}
-
-/* Hover nos parágrafos */
-.sb__footer-links_div p:hover {
-  color: var(--cor-hover);
-}
-
-/* Estilos da área inferior do footer */
-.sb__footer-below {
+.footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  border-top: 1px solid #444;
-  padding: 1rem 0;
-  text-align: center;        /* Centraliza a área inferior */
+  gap: 5px; 
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Links da área inferior */
-.sb__footer-below-links {
-  display: flex;
-  justify-content: center;   /* Centraliza os links da área inferior */
-  gap: 1rem;
+.footer-section {
+  width: 45%;
 }
 
-.sb__footer-below-links p {
-  font-size: 13px;
-  color: var(--cor-texto-secundario);
-  font-weight: 600;
-  margin-left: 2rem;
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px; 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 5px; 
+  display: block;
   transition: color 0.3s ease;
 }
 
-/* Hover nos links da área inferior */
-.sb__footer-below-links p:hover {
-  color: var(--cor-hover);
+.footer-links a:hover {
+  color: #f39c12;
 }
 
-/* Estilo para a copyright */
-.sb__footer-copyrigth p {
-  font-size: 13px;
-  line-height: 15px;
-  color: var(--cor-texto-secundario);
-  font-weight: 600;
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-/* Linha horizontal no footer */
-hr {
+.footer-section a {
   color: #fff;
-  width: 100%;
-  border: 0;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 1rem 1;
+  text-decoration: none;
+  display: block;
+  margin: 1px 5; 
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-/* Responsividade para telas médias (até 850px) */
-@media (max-width: 850px) {
-  .sb__footer-links {
+.footer-section a:hover {
+  color: #f39c12; 
+  transform: translateX(3px); 
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px; 
+  justify-content: start;
+}
+
+.social-icons a {
+  width: 25px; 
+  height: 25px; 
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons img {
+  width: 80%;
+  height: 80%;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  margin-top: 10px; 
+  border-top: 1px solid #8d8989; 
+  padding-top: 10px; 
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: #fff;
+  margin: 0 5px; 
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #f39c12;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .footer-content {
     flex-direction: column;
     align-items: center;
   }
 
-  .sb__footer-links_div {
-    width: auto;
+  .footer-section {
+    width: 100%;
     text-align: center;
+    margin-bottom: 15px; 
   }
 
-  .socialmedia {
+  .footer-bottom {
+    margin-top: 20px;
+  }
+
+  .footer-bottom a {
+    margin: 3px 0;
+  }
+
+  .social-icons {
     justify-content: center;
-    margin-top: 1rem;
-  }
-}
-
-/* Responsividade para telas pequenas (até 550px) */
-@media (max-width: 550px) {
-  .sb__footer-links {
-    margin: 1rem 0;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sb__footer-below {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .sb__footer-below-links {
-    flex-direction: column;
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-}
-
-/* Responsividade para telas muito pequenas (até 400px) */
-@media (max-width: 400px) {
-  .sb__footer-links_div p {
-    font-size: 12px;
-    line-height: 15px;
-  }
-
-  .sb__footer-copyrigth p {
-    font-size: 12px;
-  }
-
-  .sb__footer-below-links p {
-    font-size: 12px;
-    margin-left: 0;
+    gap: 20px;
   }
 }
