@@ -39,7 +39,9 @@ const PaginaDetalhesSala = () => {
             <p><strong>Preço:</strong> R${sala.precoSala}</p>
             <p><strong>Cidade:</strong> {sala.cidade}</p>
             <p><strong>Bairro:</strong> {sala.bairro}</p>
-            <p><strong>Contato  </strong></p>
+            <p><strong>Rua:</strong> {sala.rua}</p>
+            <p><strong>Número:</strong> {sala.numero}</p>
+            <p><strong>Contato:</strong></p>
           </div>
         </div>
       ) : (
