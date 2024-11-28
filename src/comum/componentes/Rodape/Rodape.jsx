@@ -5,7 +5,7 @@ function Rodape() {
   return (
     <footer className="rodape_root">
       <h6>
-          <p>@{new Date().getFullYear()} MyOffice - Soluções práticas para suas reuniões, em qualquer lugar.</p>
+          <p>@{new Date().getFullYear()} MyOffice - Todos os direitos reservados.</p>
       </h6>
     </footer>
   );

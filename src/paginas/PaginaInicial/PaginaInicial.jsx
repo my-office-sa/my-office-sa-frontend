@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
-import { FaMagnifyingGlass } from 'react-icons/fa6';
-import Principal from '../../comum/componentes/Principal/Principal';
-import CardSalas from '../../comum/componentes/CardSalas/CardSalas';
-import ServicosSalas from '../../comum/servicos/ServicosSalas';
-import './PaginaInicial.css';
-import FooterResponsivo from '../../comum/componentes/FooterResponsivo/FooterResponsivo';
+import { useState, useEffect } from "react";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import Principal from "../../comum/componentes/Principal/Principal";
+import CardSalas from "../../comum/componentes/CardSalas/CardSalas";
+import ServicosSalas from "../../comum/servicos/ServicosSalas";
+import "./PaginaInicial.css";
+import FooterResponsivo from "../../comum/componentes/FooterResponsivo/FooterResponsivo";
 
 const instanciaServicoSalas = new ServicosSalas();
 
 const PaginaInicial = () => {
   const [listaSalas, setListaSalas] = useState([]);
   const [salasFiltradas, setSalasFiltradas] = useState([]);
-  const [pesquisa, setPesquisa] = useState('');
+  const [pesquisa, setPesquisa] = useState("");
   const [buscaRealizada, setBuscaRealizada] = useState(false);
 
   useEffect(() => {
@@ -25,17 +25,14 @@ const PaginaInicial = () => {
     setPesquisa(termoPesquisa);
     setBuscaRealizada(true);
 
-    if (termoPesquisa === '') {
+    if (termoPesquisa === "") {
       setSalasFiltradas(listaSalas);
     } else {
       const salasFiltradas = listaSalas.filter((sala) => {
-        const cidade = sala.cidade ? sala.cidade.toLowerCase() : '';
-        const bairro = sala.bairro ? sala.bairro.toLowerCase() : '';
+        const cidade = sala.cidade ? sala.cidade.toLowerCase() : "";
+        const bairro = sala.bairro ? sala.bairro.toLowerCase() : "";
 
-        return (
-          cidade.includes(termoPesquisa) ||
-          bairro.includes(termoPesquisa)
-        );
+        return cidade.includes(termoPesquisa) || bairro.includes(termoPesquisa);
       });
       setSalasFiltradas(salasFiltradas);
     }
@@ -59,12 +56,12 @@ const PaginaInicial = () => {
         {buscaRealizada && salasFiltradas.length === 0 ? (
           <p>Não há salas disponíveis para o filtro informado.</p>
         ) : (
-          salasFiltradas.map((sala) => (
-            <CardSalas key={sala.id} sala={sala} />
-          ))
+          salasFiltradas.map((sala) => <CardSalas key={sala.id} sala={sala} />)
         )}
       </div>
-      <FooterResponsivo/>
+      <div className="div-responsiva">
+        <FooterResponsivo />
+      </div>
     </Principal>
   );
 };

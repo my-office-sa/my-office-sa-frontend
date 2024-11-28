@@ -63,3 +63,7 @@ header {
     }
   }
   
+  .div-responsiva {
+    margin-top: auto;  /* Faz o footer ficar sempre na parte inferior */
+  }
+  
