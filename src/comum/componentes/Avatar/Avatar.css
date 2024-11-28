@@ -10,6 +10,8 @@
 }
 
 .avatar_perfil {
+  position: absolute;
+  left: 62%;
   height: 200px;
   width: 200px;
   background-color: var(--cor-texto-claro);
@@ -18,14 +20,12 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  /* Garante que a imagem não saia do círculo */
 }
 
 .avatar_perfil img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* A imagem preenche o círculo sem distorcer */
 }
 
 a {
