@@ -6,4 +6,7 @@
     align-items: center;
   }
 
-  
+  .rodape_root p {
+  color: black;
+  opacity: 0.6;
+}

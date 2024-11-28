@@ -5,7 +5,6 @@ const FooterResponsivo = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section company">
-          <h4>Company</h4>
           <ul>
             <li><a href="/servicos">Serviços</a></li>
             <li><a href="/about">Quem somos</a></li>

@@ -1,18 +1,27 @@
 .footer {
+  position: absolute;
+  top: 65%;
+  left: 0; 
+  right: 0; 
+  width: 100%;
   background-color: #8CC8B2;
-  color: #fff;
   padding: 5px 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 2px 5px rgba(126, 196, 133, 0.1);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  gap: 5px; 
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 5px;
+  width: 100%; /* Faz a área de conteúdo ocupar 100% da largura disponível */
+  max-width: none; /* Remove qualquer limitação de largura */
+  padding: 0 20px; /* Adiciona padding para evitar que o conteúdo fique colado nas bordas */
 }
 
 .footer-section {
@@ -22,17 +31,18 @@
 .footer-section h4 {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #fff;
+  color: white;
+  opacity: 0.9;
 }
 
 .footer-links a {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   display: block;
   transition: color 0.3s ease;
 }
@@ -42,28 +52,29 @@
 }
 
 .footer-section a {
-  color: #fff;
+  color: black;
+  opacity: 0.5;
   text-decoration: none;
   display: block;
-  margin: 1px 5; 
+  margin: 1px 5;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #f39c12; 
-  transform: translateX(3px); 
+  color: #f39c12;
+  transform: translateX(3px);
 }
 
 .social-icons {
   display: flex;
-  gap: 8px; 
+  gap: 8px;
   justify-content: start;
 }
 
 .social-icons a {
-  width: 25px; 
-  height: 25px; 
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #fff;
@@ -89,15 +100,16 @@
 }
 
 .footer-bottom {
-  margin-top: 10px; 
-  border-top: 1px solid #8d8989; 
-  padding-top: 10px; 
+  margin-top: 10px;
+  border-top: 1px solid #8d8989;
+  padding-top: 10px;
   text-align: center;
 }
 
 .footer-bottom a {
-  color: #fff;
-  margin: 0 5px; 
+  color: black;
+  opacity: 0.5;
+  margin: 0 5px;
   text-decoration: none;
   font-size: 13px;
   text-transform: uppercase;
@@ -109,7 +121,6 @@
   transform: translateY(-2px);
 }
 
-
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -119,7 +130,7 @@
   .footer-section {
     width: 100%;
     text-align: center;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
   }
 
   .footer-bottom {
