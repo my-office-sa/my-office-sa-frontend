@@ -10,8 +10,6 @@
 }
 
 .avatar_perfil {
-  position: absolute;
-  left: 62%;
   height: 200px;
   width: 200px;
   background-color: var(--cor-texto-claro);
