@@ -11,6 +11,7 @@ const Menu = () => {
   const [usuarioAutenticado, setUsuarioAutenticado] = useState(false);
   const menuRef = useRef(null);
   const avatarRef = useRef(null);
+  const menuButtonRef = useRef(null);
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -21,8 +22,8 @@ const Menu = () => {
     if (
       menuRef.current &&
       !menuRef.current.contains(event.target) &&
-      avatarRef.current &&
-      !avatarRef.current.contains(event.target)
+      (!avatarRef.current || !avatarRef.current.contains(event.target)) &&
+      (!menuButtonRef.current || !menuButtonRef.current.contains(event.target))
     ) {
       setMenuAberto(false);
     }
@@ -54,7 +55,11 @@ const Menu = () => {
           <Avatar nome={instanciaServicoAutenticacao.obterNomeUsuario()} />
         </div>
       ) : (
-        <button className="menu-toggle" onClick={toggleMenu}>
+        <button
+          className="menu-toggle"
+          onClick={toggleMenu}
+          ref={menuButtonRef}
+        >
           Menu
         </button>
       )}

@@ -1,13 +1,15 @@
-.detalles-sala {
+.detalhes-info{
     display: flex;
     flex-direction: column;
+
     padding: 15px;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    line-height: 1.6em;
+    line-height: 0.7em;
     gap: 20px;
+    position: relative;
 }
 
 .imagem-detalhe-sala {
@@ -22,8 +24,12 @@
 
 .imagem-detalhe-sala.ampliada {
     width: 80vw;
-    height: auto;
+    height: 50vw;
     max-width: 900px;
     transform: scale(1.2);
-    margin: 0 auto;
+    margin: 20px auto 0;
+}
+
+strong{
+    color: #3e7f6e;
 }

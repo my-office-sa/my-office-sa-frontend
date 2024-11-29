@@ -1,3 +1,4 @@
+import React from "react";
 import Principal from "../../comum/componentes/Principal/Principal";
 import "./PaginaTermosDeUso.css";
 
@@ -26,7 +27,7 @@ const PaginaTermosDeUso = () => {
 
   return (
     <Principal titulo="Termos de Uso" voltarPara="/">
-      <div className="termo-uso">
+      <div className="politica_priv">
         <h4>1. Introdução</h4>
         <p>
           Este Termo de Uso ("Termo") estabelece as condições gerais para o uso

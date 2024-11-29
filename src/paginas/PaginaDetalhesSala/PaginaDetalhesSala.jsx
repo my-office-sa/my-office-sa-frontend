@@ -45,6 +45,8 @@ const PaginaDetalhesSala = () => {
               />
             )}
           </div>
+          <br />
+          <br />
           <div className="detalhes-info">
             <h2>{sala.nome}</h2>
             <p>
