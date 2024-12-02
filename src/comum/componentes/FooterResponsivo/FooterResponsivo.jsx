@@ -8,7 +8,7 @@ const FooterResponsivo = () => {
           <ul>
             <li><a href="/servicos">Serviços</a></li>
             <li><a href="/about">Quem somos</a></li>
-            <li><a href="/contatos">Contatos</a></li>
+            <li><a href="/contatos">Contato</a></li>
           </ul>
         </div>
 

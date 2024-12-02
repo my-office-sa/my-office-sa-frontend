@@ -23,7 +23,7 @@ const PaginaMinhasSalas = () => {
   };
 
   const excluirSala = (idSala) => {
-    if (confirm("Tem certeza que deseja excluir está sala?")) {
+    if (confirm("Tem certeza que deseja excluir esta sala?")) {
       const listaAtualizada = instanciaServicoSalas.excluirSala(idSala);
       setListaSalas(listaAtualizada);
       toast.success("Exclusão Confirmada!");

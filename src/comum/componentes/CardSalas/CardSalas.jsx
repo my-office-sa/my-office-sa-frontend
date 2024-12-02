@@ -32,6 +32,11 @@ const CardSalas = ({ sala }) => {
           </strong>
         </p>
         <p>
+          <strong>
+            CEP: </strong>
+          {sala.cep}
+        </p>
+        <p>
           <strong>Capacidade: </strong>
           {sala.capacidadeSala} pessoas
         </p>

@@ -1,0 +1,418 @@
+[33mcommit 45bc22f5690921d55d4c5107cc5216b8282cd9a0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 21:54:40 2024 -0300
+
+    estilização, imagem sala, avatar
+
+[33mcommit 11040177fd077ebff6cbffb79d461e5a6230ba11[m
+Author: GLAUBERTY ALERRANDO CHAGAS RIBEIRO <glauberty_ribeiro@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 21:34:58 2024 -0300
+
+    teste avatar
+
+[33mcommit f566b057265ba62f8e73863e5b4e8bab86b426e6[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 21:24:47 2024 -0300
+
+    correçao margin
+
+[33mcommit 56d85199db7c624774ce8e30e058cffcf796db65[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 21:20:54 2024 -0300
+
+    correçao sala
+
+[33mcommit 13d56bda7b62f531976d8fcbeb2b3b09f1066f08[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 21:17:28 2024 -0300
+
+    teste imagem
+
+[33mcommit 991769339f52e70f3c83f09c8a1982ce2c16899a[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 21:05:53 2024 -0300
+
+    correçao avatar
+
+[33mcommit 0ec67df3c23ef6610adbabf8a8333e01d8f9ed02[m
+Author: GLAUBERTY ALERRANDO CHAGAS RIBEIRO <glauberty_ribeiro@estudante.sesisenai.org.br>
+Date:   Thu Nov 28 20:50:40 2024 -0300
+
+    teste rodapé
+
+[33mcommit 4898044fd2158bdb1db4d429b6325d9d0cbad56d[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Wed Nov 27 22:13:55 2024 -0300
+
+    rodape
+
+[33mcommit 06bb4325df879d6602e43b6d43036b3f39d8fd4b[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Wed Nov 27 21:11:09 2024 -0300
+
+    correçao menu toggle
+
+[33mcommit 771562f6515326e2f4f258669c4a981c688d01d0[m
+Author: GLAUBERTY ALERRANDO CHAGAS RIBEIRO <glauberty_ribeiro@estudante.sesisenai.org.br>
+Date:   Tue Nov 26 19:08:32 2024 -0300
+
+    Subindo mais detalhes na página de detalhes da sala
+
+[33mcommit cdf0d703c51d886cba4c98177178029033f1ecaa[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Tue Nov 26 15:30:11 2024 -0300
+
+    subindo outro modelo rodapé
+
+[33mcommit a17272c9b36532dc38602d57ba38b1a21145f6d1[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sun Nov 24 22:24:56 2024 -0300
+
+    Subindo termos do politicas e termos e as partes de rotas que faltavam do rodapé, finalizando
+
+[33mcommit 3923423caaaf7f8859ec1178d6fedc1994752c08[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sat Nov 23 20:45:01 2024 -0300
+
+    subindo rodapé customizado
+
+[33mcommit 4124faa3ee5bd95469c0669e518b0ae690d1925b[m
+Merge: 2f92f10 3fd4154
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sat Nov 23 20:29:31 2024 -0300
+
+    subindo teste
+
+[33mcommit 2f92f109bc04b335284c8d14a340bf477b7b26dd[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sat Nov 23 20:20:50 2024 -0300
+
+    subindo rodapé customizado
+
+[33mcommit 3fd415475b67f9c053c4f247784c7ac7c39e0bf0[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Sat Nov 23 17:44:32 2024 -0300
+
+    gap detalhes sala
+
+[33mcommit 491cedbc33298d5d4c7e9af2ecc44b87bf90dd29[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Sat Nov 23 17:35:57 2024 -0300
+
+    correçao imagem
+
+[33mcommit c01aca7f1df45a7f3555dc3f6da5c342f757d1b5[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Sat Nov 23 17:29:30 2024 -0300
+
+    correçao imagem
+
+[33mcommit 5a1107d425d87522d04db97247ec4548de64be40[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Sat Nov 23 17:23:23 2024 -0300
+
+    correçao imagem
+
+[33mcommit 649694adb81cd117409c517074b5b7804d7c0468[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Sat Nov 23 17:19:45 2024 -0300
+
+    rodapé, detalhes da sala, politica de privacidade e termos de uso
+
+[33mcommit aae1a7e7d5e51fa5eb313318ee7238659dc9f6d0[m
+Author: unknown <ecker91@gmail.com>
+Date:   Fri Nov 22 17:51:36 2024 -0300
+
+    filtro minhas salas e outras alteraçoes
+
+[33mcommit b97b9271950abd90f6060b1e458400d658271493[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 22:04:22 2024 -0300
+
+    correçao
+
+[33mcommit 91d6482c1a73a5c1dc054039724bf3ffcf35c137[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 22:00:51 2024 -0300
+
+    logo do demo
+
+[33mcommit ee4d2bfc5c5e83ab64b72cb84e66912b47f99ec8[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 21:55:50 2024 -0300
+
+    logo
+
+[33mcommit 2f30d00fc80cb6992bd78a142cc1f482466165f2[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 21:45:40 2024 -0300
+
+    logo
+
+[33mcommit 56afe67f1198847ee0cf11b72d2fa8f63eb950b6[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 21:37:33 2024 -0300
+
+    correçao logo
+
+[33mcommit 7ecdfd0c24e7e708c5b752035c5db586d0cdc0a6[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 21:32:19 2024 -0300
+
+    mudança logo, menu toggle
+
+[33mcommit 92ab9f154389eaded62bf65287838100ad3c0841[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 20:12:28 2024 -0300
+
+    logo teste
+
+[33mcommit fabc8e743af38863fccb65719b27ef3b3a46ce11[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 19:55:43 2024 -0300
+
+    teste logo app
+
+[33mcommit 548bfc236ce2f19f2686b31cb7a4d79510317167[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 21 19:42:19 2024 -0300
+
+    correção card
+
+[33mcommit 9c0d751cc574dcf9a214ce2674d3a8d7a20cae1c[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Thu Nov 21 17:48:13 2024 -0300
+
+    subindo correção
+
+[33mcommit 8342f654bbf0125029bcd610aad70caf345b932b[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Thu Nov 21 17:45:51 2024 -0300
+
+    subindo icone de wts no card sala
+
+[33mcommit 64923140b186f10d691523674a4ff7ca40f37757[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Wed Nov 20 17:49:36 2024 -0300
+
+    Subindo api de Maps e busca de cep atualizada com axios
+
+[33mcommit b7aca571d25659327ef7c113226f6a61c13db49c[m
+Author: FERNANDO AGOSTINI ECKER <fernando_ecker@estudante.sesisenai.org.br>
+Date:   Tue Nov 19 20:28:53 2024 -0300
+
+    arrumando index
+
+[33mcommit 8660f3e059b239ec7a68ba1af75d76de461b0ee0[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Tue Nov 19 19:14:42 2024 -0300
+
+    Revert "modificando o rodapé"
+    
+    This reverts commit 72cb05d7065fdd40db45d06b399b7d97f62aea7c.
+
+[33mcommit b1b58679a7b8c0fbab41e25bf10330e10494e700[m
+Merge: 72cb05d 7677b49
+Author: Agustin <agustindefino19@gmail.com>
+Date:   Tue Nov 19 18:31:40 2024 -0300
+
+    Resolvendo conflitos e unificando históricos
+
+[33mcommit 72cb05d7065fdd40db45d06b399b7d97f62aea7c[m
+Author: Agustin <agustindefino19@gmail.com>
+Date:   Tue Nov 19 18:25:19 2024 -0300
+
+    modificando o rodapé
+
+[33mcommit 7677b499407ecfa0bfda2785f1854b5c63282b56[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Sun Nov 17 12:41:11 2024 -0300
+
+    correçao busca
+
+[33mcommit 8eab080435391a44ec0d0d34e65d342d1faf4297[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Sun Nov 17 12:28:21 2024 -0300
+
+    Correções Avatar do meu perfil, estilização Minhas Salas, Card Pagina Inicial e Filtro de busca Pagina inicial
+
+[33mcommit 0c102a8e0c0a505bf22cb8b138a1461e37e235d7[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Sun Nov 17 02:42:07 2024 -0300
+
+    estilização minhas salas
+
+[33mcommit 4aab30d1a74bd5ced6cf7d89f6a75b1bb5851328[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Sun Nov 17 02:27:40 2024 -0300
+
+    css salas cadastradas
+
+[33mcommit d23199833e59fa761f614c4e2095c77b81fa1be0[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sat Nov 16 20:40:02 2024 -0300
+
+    subindo cadastro de salas. Obs: tem que mexer no css de cadastro de salas
+
+[33mcommit dda2adc31f9644dd23f82eee88e29fcec2674ca3[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sat Nov 16 18:27:33 2024 -0300
+
+    subindo cadastro de salas, ainda não completo e meu perfil configurado corretamente
+
+[33mcommit 5bd90ebf242537f78e48b04325e7036189363084[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Fri Nov 15 23:10:25 2024 -0300
+
+    subindo alterações no botão de menu e avatar, efetuando a troca de menu para avatar, além de colocar as iniciais do usuário logado.
+
+[33mcommit 6f0627188c10ad73cb525a1f232376e7c9b1acd3[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Fri Nov 15 20:34:50 2024 -0300
+
+    teste imagem
+
+[33mcommit 299bd9c29d13abc0848b18a2c7e2bdc1442b9375[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Fri Nov 15 20:15:54 2024 -0300
+
+    teste card
+
+[33mcommit ea5f675ec561bc092d9b576de1e4587a139a8383[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Fri Nov 15 18:13:06 2024 -0300
+
+    Subindo validação de e-mail
+
+[33mcommit af5ac6fb039c6c446d0a101072ec30ce07cc8f04[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 14 21:17:52 2024 -0300
+
+    correção menu logado / deslogado
+
+[33mcommit d3390cb60505278147577f011bb17f759f504858[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Thu Nov 14 17:36:59 2024 -0300
+
+    menu login logout
+
+[33mcommit 31ceb361634a91529f07ce10ee30ace5ef2448d8[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Thu Nov 14 17:35:57 2024 -0300
+
+    menu login logout
+
+[33mcommit 13f692d33573e9e5e20464abb35b37bc10701179[m
+Author: GLAUBERTY ALERRANDO CHAGAS RIBEIRO <glauberty_ribeiro@estudante.sesisenai.org.br>
+Date:   Wed Nov 13 19:57:38 2024 -0300
+
+    Teste
+
+[33mcommit 9868f5e3c4b370bb832ac1e91bbf82adacb42042[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Wed Nov 13 17:36:58 2024 -0300
+
+    correcao menu, clique fora
+
+[33mcommit bea0fe2973298b874c47acfb0e5aa7980a23eb0f[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Wed Nov 13 00:06:23 2024 -0300
+
+    correçao menu
+
+[33mcommit 0bf38618d53c4816677db3dc80ee05b35f748e2a[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sun Nov 10 16:26:42 2024 -0300
+
+    Interação com api no cadastro da salas ao digitar o cep
+
+[33mcommit e7a7fb117328b21309822ca8a316bc519ed5dfc0[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Sat Nov 9 12:44:36 2024 -0300
+
+    estilizaçoes e adição de mascara no cadastro de sala
+
+[33mcommit 9e6cd8fffb240563f2b2d686e74d952e8921c4e0[m
+Author: ecker91 <fernando_ecker@estudante.sesisenai.org.br>
+Date:   Fri Nov 8 20:41:23 2024 -0300
+
+    telas cadastro
+
+[33mcommit 9a9cc23d290fdf850e85d1409bd84ad18067d5d0[m
+Author: GLAUBERTY ALERRANDO CHAGAS RIBEIRO <glauberty_ribeiro@estudante.sesisenai.org.br>
+Date:   Fri Nov 8 19:19:59 2024 -0300
+
+    Subindo tela de cadastro, rota de cadastro e preenchimento pelo index
+
+[33mcommit 4417782841681e625a2e553c88161c798bc397c9[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Fri Nov 8 11:36:11 2024 -0300
+
+    link na logo
+
+[33mcommit 9da96c72c9b572d24d0042046fb5e7d951cd3520[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Fri Nov 8 10:59:42 2024 -0300
+
+    Adição de págins do menu
+
+[33mcommit 107012a0fcea66178eb473d2af33ae1035c1b1fa[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Thu Nov 7 23:59:43 2024 -0300
+
+    correçao pwa
+
+[33mcommit cdd8952a8b208ae12cbf864086f2abc80360ca73[m
+Author: Pilar <mariapilar.aponte@gmail.com>
+Date:   Thu Nov 7 23:49:35 2024 -0300
+
+    pwa
+
+[33mcommit ee1ebb2166f390528788dc0efc0adea39f8cb495[m
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Thu Nov 7 21:27:49 2024 -0300
+
+    atualizaçao estilos
+
+[33mcommit f953e67becace1c0ec3eea1cb1c852fc328277e4[m
+Merge: f49f4ff aaa9fb9
+Author: Pilar Aponte <mariapilar.aponte@gmail.com>
+Date:   Thu Nov 7 21:06:11 2024 -0300
+
+    Merge branch 'master' of https://github.com/my-office-sa/my-office-sa-frontend
+
+[33mcommit f49f4fff6bfa6acccde1aec194aef0571cb4e218[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Thu Nov 7 21:00:34 2024 -0300
+
+    estilização
+
+[33mcommit aaa9fb9f70c2d4a789246bd045cefd73b04349e0[m
+Author: Alerrandoribeiro <166244101+Alerrandoribeiro@users.noreply.github.com>
+Date:   Thu Nov 7 20:59:33 2024 -0300
+
+    Add files via upload
+
+[33mcommit fa96e4af4e46e50c4d6299d691e8285cd6bd5ce3[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Tue Nov 5 18:06:03 2024 -0300
+
+    teste para botão lateral de opções
+
+[33mcommit 97e98399f9b5539ac866c389a773fbea1867ecc4[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sun Nov 3 17:36:23 2024 -0300
+
+    Criando os coponentes e as rotas
+
+[33mcommit fd2e10d2a18a5ef105b878e7133cf11790fb6e0f[m
+Author: Glauberty Ribeiro <glaubertyribeiro007@gmail.com>
+Date:   Sun Nov 3 16:26:26 2024 -0300
+
+    teste
+
+[33mcommit a553421e7929a990f924acdcba9176339c5d4dbf[m
+Author: MARIA PILAR APONTE <maria_aponte@estudante.sesisenai.org.br>
+Date:   Wed Oct 23 21:35:04 2024 -0300
+
+    primeiro commit SA/SENAI
