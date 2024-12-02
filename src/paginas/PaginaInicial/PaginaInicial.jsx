@@ -26,17 +26,16 @@ const fetchCoordinatesFromCEP = async (cep) => {
     return { lat: 0, lng: 0 };  
   }
 };
-
 const MapComponent = ({ salas }) => {
   const [coordinates, setCoordinates] = useState([]);
-  const navigate = useNavigate();  // Mover o hook `useNavigate` para dentro do componente
+  const navigate = useNavigate();  
 
   useEffect(() => {
     const fetchCoordinates = async () => {
       const coords = await Promise.all(
         salas.map(async (sala) => {
           const { lat, lng } = await fetchCoordinatesFromCEP(sala.cep);
-          return { lat, lng, title: sala.nome, id: sala.id };  // Incluir o ID da sala
+          return { lat, lng, title: sala.nome, id: sala.id, preco: sala.precoSala };  // Usando precoSala aqui
         })
       );
       setCoordinates(coords);  
@@ -60,17 +59,24 @@ const MapComponent = ({ salas }) => {
             onClick={() => navigate(`/detalhes-sala/${coord.id}`)} 
             icon={{
               path: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z", // Forma do ícone (círculo)
-              fillColor: "#58AF9B", // Cor personalizada
-              fillOpacity: 1, // Opacidade do ícone
-              strokeWeight: 0, // Sem borda
-              scale: 1.5, // Tamanho do ícone
+              fillColor: "#58AF9B",  
+              fillOpacity: 1,  
+              strokeWeight: 0, 
+              scale: 1.1,  
             }} 
+            label={{
+              text: `R$${coord.preco}`,   
+              color: "58AF9B",  
+              fontSize: "14px",   
+              fontWeight: "bold",  
+            }}
           />
         ))}
       </GoogleMap>
     </LoadScript>
   );
 };
+
 
 const instanciaServicoSalas = new ServicosSalas();
 
