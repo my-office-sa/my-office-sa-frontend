@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import Principal from "../../comum/componentes/Principal/Principal";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
-import {
-  MASCARA_CEP,
-  formatarComMascara,
-} from "../../comum/utils/mascaras";
+import { MASCARA_CEP, formatarComMascara } from "../../comum/utils/mascaras";
 import { toast } from "react-toastify";
 import ServicosSalas from "../../comum/servicos/ServicosSalas";
 import { useNavigate, useParams } from "react-router-dom";
@@ -23,15 +20,15 @@ const PaginaCadastroSala = () => {
   const [rua, setRua] = useState("");
 
   const [numero, setNumero] = useState("");
-  const [precoSala, setPrecoSala] = useState("");
-  const [capacidadeSala, setCapacidadeSala] = useState("");
-  const [descricaoSala, setDescricaoSala] = useState("");
+  const [preco, setPreco] = useState("");
+  const [capacidade, setCapacidade] = useState("");
+  const [descricao, setDescricao] = useState("");
   const [nomeArquivo, setNomeArquivo] = useState("");
-  const [imagemSala, setImagemSala] = useState("");
+  const [imagem, setImagem] = useState("");
 
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
-  const usuarioLogado = JSON.parse(localStorage.getItem('usuario-logado'))
+  // const [latitude, setLatitude] = useState("");
+  // const [longitude, setLongitude] = useState("");
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuario-logado"));
 
   useEffect(() => {
     if (params.id) {
@@ -43,10 +40,10 @@ const PaginaCadastroSala = () => {
         setBairro(SalaEncontrada.bairro);
         setRua(SalaEncontrada.rua);
         setNumero(SalaEncontrada.numero);
-        setPrecoSala(SalaEncontrada.precoSala);
-        setCapacidadeSala(SalaEncontrada.capacidadeSala);
-        setDescricaoSala(SalaEncontrada.descricaoSala);
-        setImagemSala(SalaEncontrada.imagemSala);
+        setPreco(SalaEncontrada.precoSala);
+        setCapacidade(SalaEncontrada.capacidadeSala);
+        setDescricao(SalaEncontrada.descricaoSala);
+        setImagem(SalaEncontrada.imagemSala);
       }
     }
   }, [params.id]);
@@ -61,7 +58,7 @@ const PaginaCadastroSala = () => {
       setNomeArquivo(file.name);
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagemSala(reader.result);
+        setImagem(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -80,8 +77,8 @@ const PaginaCadastroSala = () => {
       setCidade(resp.data.city || "");
       setEstado(resp.data.state || "");
 
-      setLatitude(resp.data.location?.coordinates?.latitude || "");
-      setLongitude(resp.data.location?.coordinates?.longitude || "");
+      // setLatitude(resp.data.location?.coordinates?.latitude || "");
+      // setLongitude(resp.data.location?.coordinates?.longitude || "");
 
       if (resp.data.street) {
         document.getElementById("campoNumero").focus();
@@ -91,49 +88,48 @@ const PaginaCadastroSala = () => {
     }
   };
 
-  const salvar = () => {
-    if (
-      !cep ||
-      !estado ||
-      !cidade ||
-      !bairro ||
-      !rua ||
-      !numero ||
-      !precoSala ||
-      !capacidadeSala ||
-      !descricaoSala ||
-      !imagemSala
-    ) {
-      toast.error("Preencha todos os campos!");
-      return;
-    }
+  const salvar = async () => {
+    try {
+      if (
+        !cep ||
+        !estado ||
+        !cidade ||
+        !bairro ||
+        !rua ||
+        !numero ||
+        !preco ||
+        !capacidade ||
+        !descricao ||
+        !imagem
+      ) {
+        toast.error("Preencha todos os campos!");
+        return;
+      }
 
+      const sala = {
+        cep,
+        estado,
+        cidade,
+        bairro,
+        rua,
+        numero,
+        preco: preco,
+        capacidade: capacidade,
+        descricao: descricao,
+        imagem: imagem,
+        usuario_id: +usuarioLogado.id,
+      };
 
-    const sala = {
-      id: params.id ? +params.id : Date.now(),
-      cep,
-      estado,
-      cidade,
-      bairro,
-      rua,
-      numero,
-      precoSala,
-      capacidadeSala,
-      descricaoSala,
-      imagemSala,
-      localizacao: { latitude, longitude },
-      usuarioId: +usuarioLogado.id,      
-    };
-   
-    if (params.id) {
-      instanciaServicoSalas.editarSala(sala);
-      toast.success("Tudo Pronto! Dados Atualizados.");
-    } else {
-      instanciaServicoSalas.cadastrarSala(sala);
-      toast.success("Tudo Pronto! Sala Cadastrada!");
-    }
+      if (params.id) {
+        await instanciaServicoSalas.editarSala(sala);
+        toast.success("Tudo Pronto! Dados Atualizados.");
+      } else {
+        await instanciaServicoSalas.cadastrarSala(sala);
+        toast.success("Tudo Pronto! Sala Cadastrada!");
+      }
 
-    navigate("/minhas-salas");
+      navigate("/minhas-salas");
+    } catch (error) {}
   };
 
   return (
@@ -217,10 +213,8 @@ const PaginaCadastroSala = () => {
         <input
           placeholder="Informe o valor da diária"
           type="text"
-          value={precoSala}
-          onChange={(e) =>
-            setPrecoSala(e.target.value)
-          }
+          value={preco}
+          onChange={(e) => setPreco(e.target.value)}
         />
       </div>
 
@@ -229,8 +223,8 @@ const PaginaCadastroSala = () => {
         <input
           placeholder="Informe a quantidade de pessoas"
           type="number"
-          value={capacidadeSala}
-          onChange={(e) => setCapacidadeSala(e.target.value)}
+          value={capacidade}
+          onChange={(e) => setCapacidade(e.target.value)}
         />
       </div>
 
@@ -239,8 +233,8 @@ const PaginaCadastroSala = () => {
         <input
           type="text"
           placeholder="Descreva sua sala"
-          value={descricaoSala}
-          onChange={(e) => setDescricaoSala(e.target.value)}
+          value={descricao}
+          onChange={(e) => setDescricao(e.target.value)}
         />
       </div>
 

@@ -2,14 +2,17 @@ import { useState } from "react";
 import Principal from "../../comum/componentes/Principal/Principal";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
 import "./PaginaNovoUsuario.css";
-import { MASCARA_CELULAR, formatarComMascara } from "../../comum/utils/mascaras";
+import {
+  MASCARA_CELULAR,
+  formatarComMascara,
+} from "../../comum/utils/mascaras";
 import ServicosUsuario from "../../comum/servicos/ServicosUsuario";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import ServicoAutenticacao from "../../comum/servicos/ServicoAutenticacao";
 
 const servicoUsuario = new ServicosUsuario();
-const servicoAutenticacao = new ServicoAutenticacao(); 
+const servicoAutenticacao = new ServicoAutenticacao();
 
 const PaginaNovoUsuario = () => {
   const [nome, setNome] = useState("");
@@ -18,33 +21,31 @@ const PaginaNovoUsuario = () => {
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const salvar = () => {
-    if (!nome || !email || !celular || !senha || !confirmarSenha) {
-      toast.error('Preencha todos os campos obrigatórios!');
-      return;
-    }
-    const usuario = {
-      id: Date.now(),
-      nome,
-      email,
-      celular,
-      senha,
-    };
-    
-    if(servicoAutenticacao.verificarEmail(email) ){
-      toast.error("E-mail já foi cadastrado!")
-      return
-    }
+  const salvar = async () => {
+    try {
+      if (!nome || !email || !celular || !senha || !confirmarSenha) {
+        toast.error("Preencha todos os campos obrigatórios!");
+        return;
+      }
+      const usuario = {
+        nome,
+        email,
+        celular,
+        senha,
+      };
 
-    if (senha === confirmarSenha) {
-      servicoUsuario.cadastrarUsuario(usuario);
-    } else {
-      toast.error('Senhas são diferentes!')
-      return
+      if (senha === confirmarSenha) {
+        await servicoUsuario.cadastrarUsuario(usuario);
+      } else {
+        toast.error("Senhas são diferentes!");
+        return;
+      }
+      navigate("/login");
+    } catch (error) {
+      toast.error(error.response.data);
     }
-    navigate('/login');
   };
 
   return (
@@ -73,7 +74,9 @@ const PaginaNovoUsuario = () => {
           type="tel"
           placeholder="Digite seu número de celular"
           value={celular}
-          onChange={(e) => setCelular(formatarComMascara(e.target.value, MASCARA_CELULAR))}
+          onChange={(e) =>
+            setCelular(formatarComMascara(e.target.value, MASCARA_CELULAR))
+          }
         />
       </div>
       <div className="campo">
@@ -94,7 +97,9 @@ const PaginaNovoUsuario = () => {
           onChange={(e) => setConfirmarSenha(e.target.value)}
         />
       </div>
-      <BotaoCustomizado cor="primaria" aoClicar={salvar}>Cadastrar</BotaoCustomizado>
+      <BotaoCustomizado cor="primaria" aoClicar={salvar}>
+        Cadastrar
+      </BotaoCustomizado>
     </Principal>
   );
 };

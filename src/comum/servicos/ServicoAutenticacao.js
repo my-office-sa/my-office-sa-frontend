@@ -1,20 +1,12 @@
+import instanciaApi from "./Api";
 import ServicosUsuario from "./ServicosUsuario";
 
 const servicosUsuario = new ServicosUsuario();
 
 class ServicoAutenticacao {
-  login(email, senha) {
-    const usuariosDoLocalStorage = servicosUsuario.listar();
-
-    const usuarioLogado = usuariosDoLocalStorage.find(
-      (u) => u.email === email && u.senha === senha
-    );
-
-    if (usuarioLogado) {
-      localStorage.setItem("usuario-logado", JSON.stringify(usuarioLogado));
-    }
-
-    return usuarioLogado;
+  async login(email, senha) {
+    const response = await instanciaApi.post("/login", { email, senha });
+    localStorage.setItem("usuario-logado", JSON.stringify(response.data));
   }
 
   usuarioEstaLogado() {
@@ -38,22 +30,20 @@ class ServicoAutenticacao {
   obterNomeUsuario() {
     const usuarioLogado = localStorage.getItem("usuario-logado");
     if (usuarioLogado) {
-      const usuario = JSON.parse(usuarioLogado); 
-      return usuario.nome || ""; 
+      const usuario = JSON.parse(usuarioLogado);
+      return usuario.nome || "";
     }
-    return ""; 
+    return "";
   }
 
-
   buscarUsuarioLogado() {
-    const usuarioLogado = localStorage.getItem('usuario-logado');
+    const usuarioLogado = localStorage.getItem("usuario-logado");
     if (usuarioLogado) {
       return JSON.parse(usuarioLogado);
     }
 
     return undefined;
   }
-
 }
 
 export default ServicoAutenticacao;
