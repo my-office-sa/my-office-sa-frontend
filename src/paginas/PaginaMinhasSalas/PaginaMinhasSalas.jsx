@@ -5,7 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import './PaginaMinhasSalas.css';
+import "./PaginaMinhasSalas.css";
 
 const instanciaServicoSalas = new ServicosSalas();
 
@@ -30,9 +30,11 @@ const PaginaMinhasSalas = () => {
     }
   };
 
-  const usuarioLogado = JSON.parse(localStorage.getItem('usuario-logado')) 
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuario-logado"));
 
-  const minhasSalas = listaSalas.filter((sala) => sala.usuarioId == usuarioLogado.id)
+  const minhasSalas = listaSalas.filter(
+    (sala) => sala.usuarioId == usuarioLogado.id
+  );
 
   return (
     <Principal voltarPara="/" titulo="Minhas Salas Cadastradas">
@@ -57,18 +59,28 @@ const PaginaMinhasSalas = () => {
             </div>
             <div className="dados_minhas_salas">
               <ul>
-                <li><strong>ID Sala:</strong>{sala.id}</li>
-                <li><FaEdit
+                <li>
+                  <strong>ID Sala:</strong>
+                  {sala.id}
+                </li>
+                <li>
+                  <FaEdit
                     size={18}
                     onClick={() => navegarParaEdicao(sala.id)}
                     cursor="pointer"
-                  />Editar</li>
-                <li> <FaTrash
+                  />
+                  Editar
+                </li>
+                <li>
+                  {" "}
+                  <FaTrash
                     size={18}
                     color="grey"
                     onClick={() => excluirSala(sala.id)}
                     cursor="pointer"
-                  /> Excluir</li>
+                  />{" "}
+                  Excluir
+                </li>
               </ul>
             </div>
           </div>

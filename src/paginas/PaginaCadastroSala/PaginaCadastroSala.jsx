@@ -11,7 +11,7 @@ const instanciaServicoSalas = new ServicosSalas();
 
 const PaginaCadastroSala = () => {
   const params = useParams();
-  const navigate = useNavigate("");
+  const navigate = useNavigate();
 
   const [cep, setCep] = useState("");
   const [estado, setEstado] = useState("");
@@ -28,7 +28,6 @@ const PaginaCadastroSala = () => {
 
   // const [latitude, setLatitude] = useState("");
   // const [longitude, setLongitude] = useState("");
-  const usuarioLogado = JSON.parse(localStorage.getItem("usuario-logado"));
 
   useEffect(() => {
     if (params.id) {
@@ -40,10 +39,10 @@ const PaginaCadastroSala = () => {
         setBairro(SalaEncontrada.bairro);
         setRua(SalaEncontrada.rua);
         setNumero(SalaEncontrada.numero);
-        setPreco(SalaEncontrada.precoSala);
-        setCapacidade(SalaEncontrada.capacidadeSala);
-        setDescricao(SalaEncontrada.descricaoSala);
-        setImagem(SalaEncontrada.imagemSala);
+        setPreco(SalaEncontrada.preco);
+        setCapacidade(SalaEncontrada.capacidade);
+        setDescricao(SalaEncontrada.descricao);
+        setImagem(SalaEncontrada.imagem);
       }
     }
   }, [params.id]);
@@ -90,6 +89,7 @@ const PaginaCadastroSala = () => {
 
   const salvar = async () => {
     try {
+      const usuarioLogado = JSON.parse(localStorage.getItem("usuario-logado"));
       if (
         !cep ||
         !estado ||
@@ -113,11 +113,11 @@ const PaginaCadastroSala = () => {
         bairro,
         rua,
         numero,
-        preco: preco,
-        capacidade: capacidade,
-        descricao: descricao,
-        imagem: imagem,
-        usuario_id: +usuarioLogado.id,
+        preco,
+        capacidade,
+        descricao,
+        imagem,
+        usuario_id: +usuarioLogado.id_usuario,
       };
 
       if (params.id) {
@@ -129,7 +129,10 @@ const PaginaCadastroSala = () => {
       }
 
       navigate("/minhas-salas");
-    } catch (error) {}
+    } catch (error) {
+      console.error("Erro ao salvar a sala:", error);
+      toast.error("Ocorreu um erro ao salvar a sala.");
+    }
   };
 
   return (
