@@ -13,11 +13,15 @@ const PaginaDetalhesSala = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const salasDoLocalStorage = instanciaServicoSalas.listar();
-    const salaEncontrada = salasDoLocalStorage.find(
-      (sala) => sala.id === Number(idSala)
-    );
-
+    const buscaSala = async () => {
+      const salasApi = await instanciaServicoSalas.listar();
+      const salaEncontrada = salasApi.data.find(
+        (sala) => sala.id_sala === Number(idSala)
+      );
+      localStorage.setItem("sala-encontrada", JSON.stringify(salaEncontrada));
+    };
+    buscaSala();
+    const salaEncontrada = JSON.parse(localStorage.getItem("sala-encontrada"));
     if (salaEncontrada) {
       setSala(salaEncontrada);
     } else {
@@ -34,9 +38,9 @@ const PaginaDetalhesSala = () => {
       {sala ? (
         <div className="detalhes-sala">
           <div className="detalhes-imagem">
-            {sala.imagemSala && (
+            {sala.imagem && (
               <img
-                src={sala.imagemSala}
+                src={sala.imagem}
                 alt={sala.nome}
                 className={`imagem-detalhe-sala ${
                   imagemAmpliada ? "ampliada" : ""
@@ -50,16 +54,16 @@ const PaginaDetalhesSala = () => {
           <div className="detalhes-info">
             <h2>{sala.nome}</h2>
             <p>
-              <strong>ID:</strong> {sala.id}
+              <strong>ID:</strong> {sala.id_sala}
             </p>
             <p>
-              <strong>Descrição:</strong> {sala.descricaoSala}
+              <strong>Descrição:</strong> {sala.descricao}
             </p>
             <p>
-              <strong>Capacidade:</strong> {sala.capacidadeSala} pessoas
+              <strong>Capacidade:</strong> {sala.capacidade} pessoas
             </p>
             <p>
-              <strong>Preço:</strong> R${sala.precoSala}
+              <strong>Preço:</strong> R${sala.preco}
             </p>
             <p>
               <strong>Cidade:</strong> {sala.cidade}

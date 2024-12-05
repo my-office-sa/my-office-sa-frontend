@@ -42,9 +42,9 @@ const MapComponent = ({ salas }) => {
             lat,
             lng,
             title: sala.nome,
-            id: sala.id,
-            preco: sala.precoSala,
-          }; // Usando precoSala aqui
+            id: sala.id_sala,
+            preco: sala.preco,
+          };
         })
       );
       setCoordinates(coords);
