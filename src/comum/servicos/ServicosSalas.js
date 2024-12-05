@@ -1,13 +1,13 @@
 import instanciaApi from "./Api";
 
 class ServicosSalas {
-  listar() {
-    const salasDoLocalStorage = localStorage.getItem("lista-salas");
-    if (salasDoLocalStorage) {
-      return JSON.parse(salasDoLocalStorage);
-    }
-
-    return [];
+  async listar() {
+    const salasApi = await instanciaApi.get("/salas");
+    return salasApi;
+  }
+  async listarMinhasSalas() {
+    const minhasSalasApi = await instanciaApi.get("/minhas-salas");
+    return minhasSalasApi;
   }
 
   cadastrarSala(sala) {
@@ -18,20 +18,13 @@ class ServicosSalas {
     return instanciaApi.put("/salas", sala);
   }
 
-  buscarSalaPorId(idSala) {
-    const salasDoLocalStorage = this.listar();
-    return salasDoLocalStorage.find((s) => s.id === +idSala);
+  async buscarSalaPorId(idSala) {
+    const salasApi = await this.listar();
+    return salasApi.data.find((s) => s.id_sala === +idSala);
   }
 
   excluirSala(idSala) {
-    const salasDoLocalStorage = this.listar();
-
-    const listaDeSalasAtualizada = salasDoLocalStorage.filter((s) => {
-      return s.id !== idSala;
-    });
-
-    localStorage.setItem("lista-salas", JSON.stringify(listaDeSalasAtualizada));
-    return listaDeSalasAtualizada;
+    return instanciaApi.delete(`/salas/${idSala}`);
   }
 }
 

@@ -30,21 +30,26 @@ const PaginaCadastroSala = () => {
   // const [longitude, setLongitude] = useState("");
 
   useEffect(() => {
-    if (params.id) {
-      const SalaEncontrada = instanciaServicoSalas.buscarSalaPorId(params.id);
-      if (SalaEncontrada) {
-        setCep(SalaEncontrada.cep);
-        setEstado(SalaEncontrada.estado);
-        setCidade(SalaEncontrada.cidade);
-        setBairro(SalaEncontrada.bairro);
-        setRua(SalaEncontrada.rua);
-        setNumero(SalaEncontrada.numero);
-        setPreco(SalaEncontrada.preco);
-        setCapacidade(SalaEncontrada.capacidade);
-        setDescricao(SalaEncontrada.descricao);
-        setImagem(SalaEncontrada.imagem);
+    const buscarSala = async () => {
+      if (params.id) {
+        const SalaEncontrada = await instanciaServicoSalas.buscarSalaPorId(
+          params.id
+        );
+        if (SalaEncontrada) {
+          setCep(SalaEncontrada.cep);
+          setEstado(SalaEncontrada.estado);
+          setCidade(SalaEncontrada.cidade);
+          setBairro(SalaEncontrada.bairro);
+          setRua(SalaEncontrada.rua);
+          setNumero(SalaEncontrada.numero);
+          setPreco(SalaEncontrada.preco);
+          setCapacidade(SalaEncontrada.capacidade);
+          setDescricao(SalaEncontrada.descricao);
+          setImagem(SalaEncontrada.imagem);
+        }
       }
-    }
+    };
+    buscarSala();
   }, [params.id]);
 
   const handleFileClick = () => {

@@ -6,6 +6,7 @@ import { FaTrash } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "./PaginaMinhasSalas.css";
+import instanciaApi from "../../comum/servicos/Api";
 
 const instanciaServicoSalas = new ServicosSalas();
 
@@ -14,31 +15,27 @@ const PaginaMinhasSalas = () => {
   const [listaSalas, setListaSalas] = useState([]);
 
   useEffect(() => {
-    const salasDoLocalStorage = instanciaServicoSalas.listar();
-    setListaSalas(salasDoLocalStorage);
+    const buscarSalas = async () => {
+      const response = await instanciaServicoSalas.listarMinhasSalas();
+      setListaSalas(response.data);
+    };
+    buscarSalas();
   }, []);
 
   const navegarParaEdicao = (idSala) => {
     navigate(`/cadastro-sala/${idSala}`);
   };
 
-  const excluirSala = (idSala) => {
+  const excluirSala = async (idSala) => {
     if (confirm("Tem certeza que deseja excluir esta sala?")) {
-      const listaAtualizada = instanciaServicoSalas.excluirSala(idSala);
-      setListaSalas(listaAtualizada);
+      await instanciaServicoSalas.excluirSala(idSala);
       toast.success("Exclusão Confirmada!");
     }
   };
 
-  const usuarioLogado = JSON.parse(localStorage.getItem("usuario-logado"));
-
-  const minhasSalas = listaSalas.filter(
-    (sala) => sala.usuarioId == usuarioLogado.id
-  );
-
   return (
     <Principal voltarPara="/" titulo="Minhas Salas Cadastradas">
-      {minhasSalas.length === 0 ? (
+      {listaSalas.length === 0 ? (
         <div className="link_cadastro">
           <p>Você ainda não possui nenhuma sala cadastrada.</p>
           <Link to="/cadastro-sala">
@@ -46,13 +43,13 @@ const PaginaMinhasSalas = () => {
           </Link>
         </div>
       ) : (
-        minhasSalas.map((sala) => (
-          <div key={sala.id} className="minhas_salas">
+        listaSalas.map((sala) => (
+          <div key={sala.id_sala} className="minhas_salas">
             <div>
-              {sala.imagemSala && (
+              {sala.imagem && (
                 <img
                   className="item-cliente-imagem"
-                  src={sala.imagemSala}
+                  src={sala.imagem}
                   alt={sala.nome}
                 />
               )}
@@ -61,12 +58,12 @@ const PaginaMinhasSalas = () => {
               <ul>
                 <li>
                   <strong>ID Sala:</strong>
-                  {sala.id}
+                  {sala.id_sala}
                 </li>
                 <li>
                   <FaEdit
                     size={18}
-                    onClick={() => navegarParaEdicao(sala.id)}
+                    onClick={() => navegarParaEdicao(sala.id_sala)}
                     cursor="pointer"
                   />
                   Editar
@@ -76,7 +73,7 @@ const PaginaMinhasSalas = () => {
                   <FaTrash
                     size={18}
                     color="grey"
-                    onClick={() => excluirSala(sala.id)}
+                    onClick={() => excluirSala(sala.id_sala)}
                     cursor="pointer"
                   />{" "}
                   Excluir

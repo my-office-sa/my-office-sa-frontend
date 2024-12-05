@@ -2,6 +2,7 @@ import React from "react";
 import "./CardSalas.css";
 import BotaoCustomizado from "../BotaoCustomizado/BotaoCustomizado";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const CardSalas = ({ sala }) => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const CardSalas = ({ sala }) => {
   return (
     <div className="card-sala">
       <div className="imagem-sala">
-        {sala.imagemSala && <img src={sala.imagemSala} alt={sala.nome} />}
+        {sala.imagem && <img src={sala.imagem} alt={sala.nome} />}
       </div>
       <div className="info-sala">
         <p>
@@ -32,22 +33,26 @@ const CardSalas = ({ sala }) => {
           </strong>
         </p>
         <p>
-          <strong>
-            CEP: </strong>
+          <strong>CEP: </strong>
           {sala.cep}
         </p>
         <p>
           <strong>Capacidade: </strong>
-          {sala.capacidadeSala} pessoas
+          {sala.capacidade} pessoas
         </p>
         <p>
-          <strong>Valor: </strong>R${sala.precoSala}
+          <strong>Valor: </strong>R${sala.preco}
         </p>
         <div className="btn_card">
           <BotaoCustomizado cor="primaria" aoClicar={chamarMaps}>
             Localização
           </BotaoCustomizado>
-          <BotaoCustomizado cor="primaria" aoClicar={() => navigate(`/detalhes-sala/${sala.id}`)} >Informações</BotaoCustomizado>
+          <BotaoCustomizado
+            cor="primaria"
+            aoClicar={() => navigate(`/detalhes-sala/${sala.id_sala}`)}
+          >
+            Informações
+          </BotaoCustomizado>
         </div>
       </div>
     </div>
