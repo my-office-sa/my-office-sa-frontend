@@ -10,28 +10,41 @@ const PaginaDetalhesSala = () => {
   const { idSala } = useParams();
   const [sala, setSala] = useState(null);
   const [imagemAmpliada, setImagemAmpliada] = useState(false);
+  const [carregando, setCarregando] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const buscaSala = async () => {
-      const salasApi = await instanciaServicoSalas.listar();
-      const salaEncontrada = salasApi.data.find(
-        (sala) => sala.id_sala === Number(idSala)
-      );
-      localStorage.setItem("sala-encontrada", JSON.stringify(salaEncontrada));
+      try {
+        const salasApi = await instanciaServicoSalas.listar();
+        const salaEncontrada = salasApi.data.find(
+          (sala) => sala.id_sala === Number(idSala)
+        );
+        
+        if (salaEncontrada) {
+          setSala(salaEncontrada);
+          localStorage.setItem("sala-encontrada", JSON.stringify(salaEncontrada));
+        } else {
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Erro ao buscar sala:", error);
+        navigate("/");
+      } finally {
+        setCarregando(false);
+      }
     };
+
     buscaSala();
-    const salaEncontrada = JSON.parse(localStorage.getItem("sala-encontrada"));
-    if (salaEncontrada) {
-      setSala(salaEncontrada);
-    } else {
-      navigate("/");
-    }
   }, [idSala, navigate]);
 
   const toggleImagem = () => {
     setImagemAmpliada(!imagemAmpliada);
   };
+
+  if (carregando) {
+    return <p>Carregando detalhes...</p>; 
+  }
 
   return (
     <Principal titulo="Detalhes da Sala" voltarPara="/">
@@ -42,9 +55,7 @@ const PaginaDetalhesSala = () => {
               <img
                 src={sala.imagem}
                 alt={sala.nome}
-                className={`imagem-detalhe-sala ${
-                  imagemAmpliada ? "ampliada" : ""
-                }`}
+                className={`imagem-detalhe-sala ${imagemAmpliada ? "ampliada" : ""}`}
                 onClick={toggleImagem}
               />
             )}
@@ -83,7 +94,7 @@ const PaginaDetalhesSala = () => {
           </div>
         </div>
       ) : (
-        <p>Carregando detalhes...</p>
+        <p>Sala não encontrada.</p>
       )}
     </Principal>
   );
