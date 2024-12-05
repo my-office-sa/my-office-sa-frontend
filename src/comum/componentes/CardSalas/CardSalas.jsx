@@ -8,14 +8,8 @@ const CardSalas = ({ sala }) => {
   const navigate = useNavigate();
 
   const chamarMaps = () => {
-    if (
-      sala.localizacao &&
-      sala.localizacao.latitude &&
-      sala.localizacao.longitude
-    ) {
-      navigate(
-        `/maps/${sala.localizacao.latitude}/${sala.localizacao.longitude}`
-      );
+    if (sala.latitude && sala.longitude) {
+      navigate(`/maps/${sala.latitude}/${sala.longitude}`);
     } else {
       toast.error("Localização não disponível para esta sala.");
     }

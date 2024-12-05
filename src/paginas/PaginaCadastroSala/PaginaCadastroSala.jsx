@@ -26,8 +26,8 @@ const PaginaCadastroSala = () => {
   const [nomeArquivo, setNomeArquivo] = useState("");
   const [imagem, setImagem] = useState("");
 
-  // const [latitude, setLatitude] = useState("");
-  // const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
   useEffect(() => {
     const buscarSala = async () => {
@@ -46,6 +46,8 @@ const PaginaCadastroSala = () => {
           setCapacidade(SalaEncontrada.capacidade);
           setDescricao(SalaEncontrada.descricao);
           setImagem(SalaEncontrada.imagem);
+          setLatitude(SalaEncontrada.latitude);
+          setLongitude(SalaEncontrada.longitude);
         }
       }
     };
@@ -81,8 +83,8 @@ const PaginaCadastroSala = () => {
       setCidade(resp.data.city || "");
       setEstado(resp.data.state || "");
 
-      // setLatitude(resp.data.location?.coordinates?.latitude || "");
-      // setLongitude(resp.data.location?.coordinates?.longitude || "");
+      setLatitude(resp.data.location?.coordinates?.latitude || "");
+      setLongitude(resp.data.location?.coordinates?.longitude || "");
 
       if (resp.data.street) {
         document.getElementById("campoNumero").focus();
@@ -123,6 +125,8 @@ const PaginaCadastroSala = () => {
         descricao,
         imagem,
         usuario_id: +usuarioLogado.id_usuario,
+        latitude,
+        longitude,
       };
 
       if (params.id) {
