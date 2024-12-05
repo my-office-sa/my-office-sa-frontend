@@ -33,3 +33,27 @@
 strong{
     color: #3e7f6e;
 }
+.social-wts {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+  }
+  
+  .whatsapp-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .whatsapp-icon {
+    width: 30px; 
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-icon:hover {
+    transform: scale(1.1); 
+  }
+  

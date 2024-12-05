@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import Principal from "../../comum/componentes/Principal/Principal";
 import ServicosSalas from "../../comum/servicos/ServicosSalas";
 import "./PaginaDetalhesSala.css";
@@ -20,7 +20,7 @@ const PaginaDetalhesSala = () => {
         const salaEncontrada = salasApi.data.find(
           (sala) => sala.id_sala === Number(idSala)
         );
-        
+
         if (salaEncontrada) {
           setSala(salaEncontrada);
           localStorage.setItem("sala-encontrada", JSON.stringify(salaEncontrada));
@@ -43,7 +43,7 @@ const PaginaDetalhesSala = () => {
   };
 
   if (carregando) {
-    return <p>Carregando detalhes...</p>; 
+    return <Principal titulo="Carregando..." />;
   }
 
   return (
@@ -89,7 +89,14 @@ const PaginaDetalhesSala = () => {
               <strong>Número:</strong> {sala.numero}
             </p>
             <p>
-              <strong>Contato:</strong>
+
+              <div className="social-wts">
+                <strong>Contato:</strong>
+                <Link to={`https://wa.me/`} className="whatsapp-link">
+                  <img src="/whatsapp.png" alt="WhatsApp" className="whatsapp-icon" />
+                </Link>
+              </div>
+
             </p>
           </div>
         </div>
