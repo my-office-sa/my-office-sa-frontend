@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Principal from "../../comum/componentes/Principal/Principal";
 import ServicosSalas from "../../comum/servicos/ServicosSalas";
+import ServicosUsuario from "../../comum/servicos/ServicosUsuario";
 import "./PaginaDetalhesSala.css";
 
 const instanciaServicoSalas = new ServicosSalas();
+const instanciaServicoUsuario = new ServicosUsuario();
 
 const PaginaDetalhesSala = () => {
   const { idSala } = useParams();
   const [sala, setSala] = useState(null);
+  const [celular, setCelular] = useState("");
   const [imagemAmpliada, setImagemAmpliada] = useState(false);
   const [carregando, setCarregando] = useState(true);
   const navigate = useNavigate();
@@ -23,7 +26,10 @@ const PaginaDetalhesSala = () => {
 
         if (salaEncontrada) {
           setSala(salaEncontrada);
-          localStorage.setItem("sala-encontrada", JSON.stringify(salaEncontrada));
+          localStorage.setItem(
+            "sala-encontrada",
+            JSON.stringify(salaEncontrada)
+          );
         } else {
           navigate("/");
         }
@@ -36,6 +42,17 @@ const PaginaDetalhesSala = () => {
     };
 
     buscaSala();
+
+    const buscarDonoSala = async () => {
+      const salaEncontrada = JSON.parse(
+        localStorage.getItem("sala-encontrada")
+      );
+      const id_dono = salaEncontrada.usuario_id;
+      const donoSala = await instanciaServicoUsuario.buscarPorId(id_dono);
+      setCelular(donoSala.data.celular);
+    };
+
+    buscarDonoSala();
   }, [idSala, navigate]);
 
   const toggleImagem = () => {
@@ -46,6 +63,7 @@ const PaginaDetalhesSala = () => {
     return <Principal titulo="Carregando..." />;
   }
 
+  console.log(celular);
   return (
     <Principal titulo="Detalhes da Sala" voltarPara="/">
       {sala ? (
@@ -55,7 +73,9 @@ const PaginaDetalhesSala = () => {
               <img
                 src={sala.imagem}
                 alt={sala.nome}
-                className={`imagem-detalhe-sala ${imagemAmpliada ? "ampliada" : ""}`}
+                className={`imagem-detalhe-sala ${
+                  imagemAmpliada ? "ampliada" : ""
+                }`}
                 onClick={toggleImagem}
               />
             )}
@@ -89,14 +109,16 @@ const PaginaDetalhesSala = () => {
               <strong>Número:</strong> {sala.numero}
             </p>
             <p>
-
               <div className="social-wts">
                 <strong>Contato:</strong>
-                <Link to={`https://wa.me/`} className="whatsapp-link">
-                  <img src="/whatsapp.png" alt="WhatsApp" className="whatsapp-icon" />
+                <Link to={`https://wa.me/${celular}`} className="whatsapp-link">
+                  <img
+                    src="/whatsapp.png"
+                    alt="WhatsApp"
+                    className="whatsapp-icon"
+                  />
                 </Link>
               </div>
-
             </p>
           </div>
         </div>

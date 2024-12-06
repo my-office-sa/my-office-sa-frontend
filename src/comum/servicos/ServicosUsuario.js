@@ -26,9 +26,9 @@ class ServicosUsuario {
     );
   }
 
-  buscarPorId(idUsuario) {
-    const usuariosDoLocalStorage = this.listar();
-    return usuariosDoLocalStorage.find((u) => u.id === +idUsuario);
+  async buscarPorId(idUsuario) {
+    const donoSala = await this.listar();
+    return donoSala.find((u) => u.id == +idUsuario);
   }
 
   excluirUsuario(idUsuario) {

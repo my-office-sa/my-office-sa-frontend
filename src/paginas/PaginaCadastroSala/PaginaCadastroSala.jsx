@@ -114,6 +114,7 @@ const PaginaCadastroSala = () => {
       }
 
       const sala = {
+        id_sala: params.id ? +params.id : null,
         cep,
         estado,
         cidade,
