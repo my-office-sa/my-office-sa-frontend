@@ -1,13 +1,9 @@
 import instanciaApi from "./Api";
 
 class ServicosUsuario {
-  listar() {
-    const usuariosDoLocalStorage = localStorage.getItem("lista-usuarios");
-    if (usuariosDoLocalStorage) {
-      return JSON.parse(usuariosDoLocalStorage);
-    }
-
-    return [];
+  async listar() {
+    const salasApi = await instanciaApi.get("/usuarios");
+    return salasApi;
   }
 
   cadastrarUsuario(usuario) {
@@ -28,7 +24,7 @@ class ServicosUsuario {
 
   async buscarPorId(idUsuario) {
     const donoSala = await this.listar();
-    return donoSala.find((u) => u.id == +idUsuario);
+    return donoSala.data.find((u) => u.id_usuario === +idUsuario);
   }
 
   excluirUsuario(idUsuario) {
