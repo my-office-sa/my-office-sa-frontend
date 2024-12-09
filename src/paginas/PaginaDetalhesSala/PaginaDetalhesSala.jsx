@@ -49,7 +49,13 @@ const PaginaDetalhesSala = () => {
       );
       const id_dono = salaEncontrada.usuario_id;
       const donoSala = await instanciaServicoUsuario.buscarPorId(id_dono);
-      setCelular(donoSala.data.celular);
+
+      const formatarCelular = (celular) => {
+        return celular.replace(/\D/g, '');  
+      };
+      const celularFormatado = formatarCelular(donoSala.celular)
+
+      setCelular(celularFormatado);
     };
 
     buscarDonoSala();
@@ -63,7 +69,6 @@ const PaginaDetalhesSala = () => {
     return <Principal titulo="Carregando..." />;
   }
 
-  console.log(celular);
   return (
     <Principal titulo="Detalhes da Sala" voltarPara="/">
       {sala ? (
