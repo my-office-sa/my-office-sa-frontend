@@ -34,7 +34,7 @@ const PaginaMinhasSalas = () => {
   };
 
   return (
-    <Principal voltarPara="/" titulo="Minhas Salas Cadastradas">
+    <Principal voltarPara="/" titulo="Salas Cadastradas">
       {listaSalas.length === 0 ? (
         <div className="link_cadastro">
           <p>Você ainda não possui nenhuma sala cadastrada.</p>

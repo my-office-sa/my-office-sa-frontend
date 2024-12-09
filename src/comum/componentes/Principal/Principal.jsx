@@ -15,7 +15,7 @@ function Principal({ voltarPara, titulo, children }) {
             </Link>
           )}
 
-          <h1>{titulo}</h1>
+          {titulo}
         </div>
 
         {children}
