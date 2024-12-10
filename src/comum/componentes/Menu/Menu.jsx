@@ -59,9 +59,7 @@ const Menu = () => {
           className="menu-toggle"
           onClick={toggleMenu}
           ref={menuButtonRef}
-        >
-          Menu
-        </button>
+        ></button>
       )}
 
       {usuarioAutenticado && menuAberto && (
