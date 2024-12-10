@@ -51,9 +51,9 @@ const PaginaDetalhesSala = () => {
       const donoSala = await instanciaServicoUsuario.buscarPorId(id_dono);
 
       const formatarCelular = (celular) => {
-        return celular.replace(/\D/g, '');  
+        return celular.replace(/\D/g, "");
       };
-      const celularFormatado = formatarCelular(donoSala.celular)
+      const celularFormatado = formatarCelular(donoSala.celular);
 
       setCelular(celularFormatado);
     };
@@ -90,10 +90,7 @@ const PaginaDetalhesSala = () => {
           <div className="detalhes-info">
             <h2>{sala.nome}</h2>
             <p>
-              <strong>ID:</strong> {sala.id_sala}
-            </p>
-            <p>
-              <strong>Descrição:</strong> {sala.descricao}
+              <strong>Descrição:</strong> <span>{sala.descricao}</span>
             </p>
             <p>
               <strong>Capacidade:</strong> {sala.capacidade} pessoas
@@ -108,10 +105,7 @@ const PaginaDetalhesSala = () => {
               <strong>Bairro:</strong> {sala.bairro}
             </p>
             <p>
-              <strong>Rua:</strong> {sala.rua}
-            </p>
-            <p>
-              <strong>Número:</strong> {sala.numero}
+              <strong>Rua:</strong> <span>{sala.rua + ", " + sala.numero}</span>
             </p>
             <p>
               <div className="social-wts">

@@ -127,7 +127,7 @@ const PaginaInicial = () => {
         <div className="input-wrapper">
           <input
             type="text"
-            placeholder="Busque sua sala"
+            placeholder="Busque por bairro ou cidade"
             value={pesquisa}
             onChange={filtrarSalas}
           />
