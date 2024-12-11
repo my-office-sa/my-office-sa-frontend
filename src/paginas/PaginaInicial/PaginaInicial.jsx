@@ -71,18 +71,18 @@ const MapComponent = ({ salas }) => {
               fillColor: "#58AF9B",
               fillOpacity: 1,
               strokeWeight: 0,
-              scale: 1.1,
+              scale: 0,
             }}
             label={{
               text: `R$${coord.preco}`,
-              color: "58AF9B",
+              color: "#3e806e",
               fontSize: "14px",
               fontWeight: "bold",
             }}
           />
         ))}
       </GoogleMap>
-    </LoadScript>
+    </LoadScript> 
   );
 };
 

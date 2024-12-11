@@ -1,20 +1,30 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Principal from "../../comum/componentes/Principal/Principal";
 import ServicosSalas from "../../comum/servicos/ServicosSalas";
 import ServicosUsuario from "../../comum/servicos/ServicosUsuario";
 import "./PaginaDetalhesSala.css";
+import ServicoAutenticacao from "../../comum/servicos/ServicoAutenticacao";
 
 const instanciaServicoSalas = new ServicosSalas();
 const instanciaServicoUsuario = new ServicosUsuario();
+const instanciaServicoAutenticacao = new ServicoAutenticacao();
 
 const PaginaDetalhesSala = () => {
+  const [usuarioAutenticado, setUsuarioAutenticado] = useState(false);
   const { idSala } = useParams();
   const [sala, setSala] = useState(null);
   const [celular, setCelular] = useState("");
   const [imagemAmpliada, setImagemAmpliada] = useState(false);
   const [carregando, setCarregando] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const usuarioEstaLogado = instanciaServicoAutenticacao.usuarioEstaLogado();
+    setUsuarioAutenticado(usuarioEstaLogado);
+  }, []);
 
   useEffect(() => {
     const buscaSala = async () => {
@@ -65,6 +75,17 @@ const PaginaDetalhesSala = () => {
     setImagemAmpliada(!imagemAmpliada);
   };
 
+  const handleWhatsAppClick = (e) => {
+    try {
+      if (!usuarioAutenticado) {
+        e.preventDefault();
+        toast.error("Você precisa estar logado para entrar em contato pelo WhatsApp.");
+      }
+    } catch (error) {
+      console.error("Erro ao verificar autenticação:", error);
+    }
+  };
+
   if (carregando) {
     return <Principal titulo="Carregando..." />;
   }
@@ -110,7 +131,11 @@ const PaginaDetalhesSala = () => {
             <p>
               <div className="social-wts">
                 <strong>Contato:</strong>
-                <Link to={`https://wa.me/${celular}`} className="whatsapp-link">
+                <Link
+                  to={`https://wa.me/${celular}`}
+                  className="whatsapp-link"
+                  onClick={handleWhatsAppClick}
+                >
                   <img
                     src="/whatsapp.png"
                     alt="WhatsApp"
